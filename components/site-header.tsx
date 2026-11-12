@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { ArrowUpRight, Calendar, CalendarIcon, Menu, X } from "lucide-react";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { BOOKING_URL } from "@/lib/links";
@@ -15,15 +15,15 @@ export function Brand({ subtitle }: { subtitle: string }) {
     <span className="brand">
       <span className="brand-logo">
         <Image
-          src="/images/lilianne-logo.png"
+          src="/images/logo.png"
           alt="Lilianne Acupuncture logo"
           width={1080}
           height={1080}
-          sizes="100px"
+          sizes="130px"
         />
       </span>
       <span>
-        <span className="brand-name">Lilianne</span>
+        <span className="brand-name">Lilianne Dorais</span>
         <span className="brand-subtitle">{subtitle}</span>
       </span>
     </span>
@@ -118,6 +118,7 @@ export function SiteHeader({ copy, locale }: { copy: Copy; locale: Locale }) {
               target="_blank"
               rel="noreferrer"
             >
+              <CalendarIcon />
               {copy.book}
               <ArrowUpRight data-icon="inline-end" />
             </a>
