@@ -4,10 +4,31 @@ import './globals.css'
 
 const serif = Cormorant_Garamond({ subsets: ['latin'], weight: ['400', '500'], style: ['normal', 'italic'], variable: '--font-editorial', display: 'swap' })
 const sans = DM_Sans({ subsets: ['latin'], variable: '--font-body', display: 'swap' })
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'
 
 export const metadata: Metadata = {
-  title: 'Lilianne Acupuncture — Acupuncture & Wellness',
-  description: 'Discover Lilianne Acupuncture: thoughtful, personalized care and a quiet space to restore your balance. In English and French.',
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: 'Lilianne Acupuncture',
+    template: '%s | Lilianne Acupuncture',
+  },
+  applicationName: 'Lilianne Acupuncture',
+  creator: 'Lilianne Acupuncture',
+  publisher: 'Lilianne Acupuncture',
+  referrer: 'origin-when-cross-origin',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  icons: {
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/icon-light-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icon-dark-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: '/apple-icon.png',
+  },
 }
 
 export const viewport: Viewport = {

@@ -1,15 +1,20 @@
-import type { Metadata } from 'next'
-import { WellnessSite } from '@/components/wellness-site'
-import { translations, type Locale } from '@/lib/translations'
+import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 
-type PageProps = { searchParams: Promise<{ lang?: string }> }
+export const metadata: Metadata = {
+  title: "Lilianne Acupuncture — Acupuncture à Valleyfield",
+  description:
+    "Acupuncture à Valleyfield avec des soins attentionnés et personnalisés dans un espace paisible.",
+  alternates: {
+    canonical: "/fr",
+    languages: {
+      en: "/en",
+      fr: "/fr",
+      "x-default": "/fr",
+    },
+  },
+};
 
-export async function generateMetadata({ searchParams }: PageProps): Promise<Metadata> {
-  const locale: Locale = (await searchParams).lang === 'fr' ? 'fr' : 'en'
-  return { title: translations[locale].metaTitle, description: translations[locale].metaDescription }
-}
-
-export default async function Page({ searchParams }: PageProps) {
-  const locale: Locale = (await searchParams).lang === 'fr' ? 'fr' : 'en'
-  return <WellnessSite locale={locale} />
+export default function Page() {
+  redirect("/fr");
 }
