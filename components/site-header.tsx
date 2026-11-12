@@ -57,7 +57,7 @@ export function SiteHeader({ copy, locale }: { copy: Copy; locale: Locale }) {
         {copy.skip}
       </a>
       <header className={cn("site-header", scrolled && "is-scrolled")}>
-        <div className="header-inner">
+        <div className="header-inner container">
           <a
             href="#"
             className="brand-link"

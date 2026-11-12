@@ -127,7 +127,7 @@ export function WellnessSite({ locale }: { locale: Locale }) {
           </div> */}
         </div>
         <section className="hero">
-          <div className="hero-content ">
+          <div className="hero-content container">
             <Reveal duration={heroRevealDuration}>
               <p className="eyebrow hero-eyebrow">
                 <span />
@@ -164,13 +164,13 @@ export function WellnessSite({ locale }: { locale: Locale }) {
                 {copy.book}
                 <ArrowUpRight data-icon="inline-end" />
               </a>
-              <a href="#approach" className="text-link">
+              <a href="#approach" className="text-link mobile-hidden">
                 {copy.discover}
                 <ArrowUpRight size={15} />
               </a>
             </Reveal>
             <Reveal delay={0.32} duration={heroRevealDuration}>
-              <p className="hero-footnote">
+              <p className="hero-footnote mobile-hidden">
                 <Sprout size={17} strokeWidth={1.2} aria-hidden="true" />
                 {copy.heroFootnote}
               </p>
