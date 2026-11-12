@@ -683,7 +683,7 @@
   color-scheme: light;
   --background: #faf9f6;
   --foreground: #303a33;
-  --primary: #485f50;
+  --primary: #52603a; /*#536535*/
   --primary-foreground: #faf9f6;
   --secondary: #dce5d5;
   --muted: #ede7dd;
@@ -888,7 +888,7 @@ a.group\/button {
 .brand-logo img {
   position: absolute;
   top: 0;
-  transform: translate(20px, 2px) scale(2);
+  transform: translate(20px, 6px) scale(2);
   z-index: 2;
   display: block;
   width: 100%;
@@ -1270,7 +1270,7 @@ a.hero-book {
 }
 .practitioner-portrait {
   aspect-ratio: 4 / 5;
-  border-radius: 10px;
+  border-radius: 85px;
   background: var(--secondary);
 }
 .practitioner-portrait img {
@@ -1529,7 +1529,11 @@ a.hero-book {
 .footer-bottom .nav-link {
   font-size: 9px;
 }
-
+@media (max-width: 1536px) {
+  .hero-title h1 {
+    font-size: 90px;
+  }
+}
 @media (max-width: 1150px) {
   .header-inner {
     width: 100%;

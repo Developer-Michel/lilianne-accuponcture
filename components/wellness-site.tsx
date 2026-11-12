@@ -128,12 +128,12 @@ export function WellnessSite({ locale }: { locale: Locale }) {
         </div>
         <section className="hero">
           <div className="hero-content container">
-            <Reveal duration={heroRevealDuration}>
+            {/* <Reveal duration={heroRevealDuration}>
               <p className="eyebrow hero-eyebrow">
                 <span />
                 {copy.heroEyebrow}
               </p>
-            </Reveal>
+            </Reveal> */}
             <Reveal
               delay={0.08}
               className="hero-title"
@@ -164,17 +164,8 @@ export function WellnessSite({ locale }: { locale: Locale }) {
                 {copy.book}
                 <ArrowUpRight data-icon="inline-end" />
               </a>
-              <a href="#approach" className="text-link mobile-hidden">
-                {copy.discover}
-                <ArrowUpRight size={15} />
-              </a>
             </Reveal>
-            <Reveal delay={0.32} duration={heroRevealDuration}>
-              <p className="hero-footnote mobile-hidden">
-                <Sprout size={17} strokeWidth={1.2} aria-hidden="true" />
-                {copy.heroFootnote}
-              </p>
-            </Reveal>
+
             <a href="#approach" className="hero-scroll">
               <span className="scroll-circle">
                 <ArrowDown size={15} strokeWidth={1.3} />
@@ -204,14 +195,13 @@ export function WellnessSite({ locale }: { locale: Locale }) {
           <div className="container approach-grid">
             <Reveal className="approach-image image-wrap">
               <Image
-                src="/images/lilianne-treatment.png"
+                src="/images/lilianne-treatment2.jpg"
                 alt={copy.treatmentAlt}
                 fill
                 sizes="(max-width: 767px) calc(100vw - 44px), 45vw"
               />
             </Reveal>
             <Reveal className="approach-copy" delay={0.1}>
-              <p className="eyebrow">{copy.introEyebrow}</p>
               <h2>
                 {copy.introTitle}
                 <br />
@@ -219,10 +209,6 @@ export function WellnessSite({ locale }: { locale: Locale }) {
               </h2>
               <p className="body-copy">{copy.introBody}</p>
               <p className="body-copy">{copy.introBody2}</p>
-              <a href="#benefits" className="text-link">
-                {copy.introLink}
-                <ArrowUpRight size={16} />
-              </a>
             </Reveal>
           </div>
         </section>
@@ -276,10 +262,11 @@ export function WellnessSite({ locale }: { locale: Locale }) {
             <Reveal className="practitioner-profile">
               <div className="practitioner-portrait image-wrap">
                 <Image
-                  src="/images/lilianne-portrait.png"
+                  src="/images/lilianne-portrait.jpg"
                   alt={copy.portraitAlt}
                   fill
                   sizes="(max-width: 767px) 320px, 40vw"
+                  style={{ objectFit: "cover", objectPosition: "center 15%" }}
                 />
               </div>
               <h3>{copy.practitionerName}</h3>
