@@ -7,12 +7,16 @@ export const translations = {
       "Acupuncture in Valleyfield with thoughtful, personalized care in a peaceful space. Available in English and French.",
     brandSubtitle: "ACUPUNCTURE",
     nav: [
-      "Our approach",
-      "Your practitioner",
-      "Treatments",
-      "Your first visit",
+      "Acupuncture",
+
+      "My approach",
+      "Conditions treated",
+      "Services & Pricing",
+      "Infos",
     ],
+    more: "More",
     book: "Book an appointment",
+    learnMore: "Learn more",
     discover: "Discover acupuncture",
     menu: "Open navigation",
     close: "Close",
@@ -81,10 +85,8 @@ export const translations = {
       "This is a practice built around you, not a one-size-fits-all treatment. Each visit begins with a conversation, making room for your questions, your comfort, and the things that matter to you.",
     practitionerBody2:
       "A thoughtful, collaborative approach. An unhurried environment. And care that meets you where you are.",
-    practitionerName: "Lilianne",
-    practitionerCaption: "Lilianne Acupuncture · Care that listens",
     portraitAlt: "Lilianne smiling, seated beside plants in a softly lit room",
-    practitionerLink: "Let’s get to know each other",
+    practitionerLink: "Your first visit",
     experienceEyebrow: "YOUR FIRST VISIT",
     experienceTitle: "Nothing to rush.",
     experienceItalic: "Everything to feel at ease.",
@@ -106,27 +108,67 @@ export const translations = {
         "We reflect on your experience and discuss aftercare and any next steps together.",
       ],
     ],
-    servicesEyebrow: "TIME FOR YOURSELF",
-    servicesTitle: "Care, at your pace.",
-    services: [
-      [
-        "Your first appointment",
-        "An in-depth conversation, a personalized assessment, and your first acupuncture treatment.",
-        "Allow 60–90 minutes",
-      ],
-      [
-        "Continuing your care",
-        "A check-in on how you are feeling, followed by a treatment adapted to your current needs.",
-        "Allow 45–60 minutes",
-      ],
+    hoursLocationsEyebrow: "LOCATION & AVAILABILITY",
+    hoursLocationsTitle: "Hours & locations",
+    hoursInfo: "By appointment · hours to be confirmed",
+    locationInfo: "120 Rue de Grande-Île, Salaberry-de-Valleyfield, QC J6S 3M6",
+    servicesEyebrow: "",
+    servicesTitle: "Services & pricing",
+    serviceOfferings: [
+      {
+        id: "private-acupuncture",
+        title: "Private acupuncture",
+        description:
+          "Individual care in a calm setting, tailored to your needs.",
+        image: "/images/acupuncture-private.jpg",
+        imageAlt: "Acupuncturist providing a private treatment",
+        priceGroups: [
+          {
+            title: "Regular rates",
+            prices: [
+              ["First appointment", "$110"],
+              ["Follow-up", "$90"],
+            ],
+          },
+          {
+            title: "OVPAC members",
+            prices: [
+              ["First appointment", "$85"],
+              ["Follow-up", "$65"],
+            ],
+          },
+        ],
+      },
+      {
+        id: "social-acupuncture",
+        title: "Social acupuncture",
+        description: "Acupuncture offered in a shared, welcoming space.",
+        image: "/images/acupuncture-social.jpg",
+        imageAlt: "Acupuncture in a shared treatment space",
+        priceGroups: [
+          {
+            title: "Regular rate",
+            prices: [["Session", "$40"]],
+          },
+          {
+            title: "OVPAC members",
+            prices: [["Session", "$40"]],
+          },
+        ],
+      },
     ],
-    pricing: "Pricing to be confirmed",
-    durationNote: "Indicative durations; confirmed when booking.",
+    serviceDiscountNote:
+      "The $25 OVPAC member discount is already included in the member rates shown.",
+    serviceReceiptNote: "A receipt will be provided for insurance claims.",
+    firstVisitPageTitle: "Your first visit",
+    firstVisitDescription:
+      "A look at what to expect, from your first conversation to aftercare.",
     pauseTop: "YOU DON’T HAVE TO DO MORE.",
     pauseTitle: "Sometimes, you just",
     pauseItalic: "need to be.",
-    faqEyebrow: "A LITTLE REASSURANCE",
     faqTitle: "You might be wondering.",
+    faqContactPrompt:
+      "1. If you have any other questions, please don’t hesitate to contact me.",
     faqs: [
       [
         "Does acupuncture hurt?",
@@ -152,7 +194,7 @@ export const translations = {
         "Is acupuncture covered by insurance?",
         "Coverage varies by insurer, location, and practitioner credentials. Please check your plan directly and confirm the practitioner’s registration and receipt availability before booking.",
       ],
-    ],
+    ] as const,
     contactEyebrow: "YOUR NEXT CHAPTER",
     contactTitle: "A little time.",
     contactItalic: "Just for you.",
@@ -169,7 +211,6 @@ export const translations = {
     message: "What brings you here?",
     namePlaceholder: "First and last name",
     emailPlaceholder: "you@example.com",
-    messagePlaceholder: "A question, a preferred time, or simply a hello…",
     formAction: "Prepare my inquiry",
     formNote:
       "Preview: online booking and message delivery are not connected. You can prepare and download an inquiry below. Please do not include sensitive health information.",
@@ -178,6 +219,8 @@ export const translations = {
       "This is a draft only. It has not been sent and no appointment has been booked. Download it to keep until the practice’s contact details are available.",
     download: "Download my inquiry",
     footerLine: "A gentler way to feel like yourself.",
+    homeLabel: "Lilianne Acupuncture — home",
+    footerNavLabel: "Footer navigation",
     privacy: "Privacy",
     copyright: "All rights reserved.",
     privacyTitle: "Your privacy matters",
@@ -191,12 +234,15 @@ export const translations = {
       "Acupuncture à Valleyfield avec des soins attentionnés et personnalisés dans un espace paisible. En français et en anglais.",
     brandSubtitle: "ACUPUNCTURE",
     nav: [
-      "Notre approche",
-      "Votre praticienne",
-      "Les soins",
-      "Votre première visite",
+      "L’acupuncture",
+      "Mon approche",
+      "Conditions traitées",
+      "Services & Tarifs",
+      "Infos",
     ],
+    more: "Plus",
     book: "Prendre rendez-vous",
+    learnMore: "En savoir plus",
     discover: "Découvrir l’acupuncture",
     menu: "Ouvrir la navigation",
     close: "Fermer",
@@ -217,12 +263,11 @@ export const translations = {
       "Un bien-être tout en douceur",
     ],
     introEyebrow: "SAGESSE ANCESTRALE, SOINS PERSONNALISÉS",
-    introTitle: "Au cœur de ma pratique",
-    introItalic: "Une approche attentive",
+    introTitle: "Qu’est-ce que",
+    introItalic: "l’acupuncture ?",
     introBody:
-      "Membre de l’Ordre des acupuncteurs du Québec, je considère l’acupuncture comme une approche qui permet de prendre soin de soi en considérant la personne dans son ensemble.",
-    introBody2:
-      "Chaque rendez-vous est l'occasion de prendre un moment pour écouter ce que le corps et l'esprit ont à dire, afin de mieux comprendre et soulager les déséquilibres qui peuvent se manifester au quotidien.",
+      "Issue d’un savoir-faire millénaire, l’acupuncture consiste à stimuler des points précis du corps afin d’encourager ses mécanismes naturels de guérison. Pour y parvenir, j'utilise principalement de fines aiguilles, complétées au besoin par d'autres approches comme le tuina, les ventouses ou la moxibustion. À la fois apaisante et régulatrice, cette discipline soulage la douleur et soutient l'équilibre global de l'organisme en agissant sur les systèmes nerveux, endocrinien et immunitaire.",
+    introBody2: "",
     introLink: "Explorer notre approche",
     treatmentAlt:
       "Lilianne posant délicatement des aiguilles d’acupuncture lors d’un soin du dos",
@@ -256,20 +301,16 @@ export const translations = {
         "Une pause régulière pour renouer avec votre corps et avec vous-même.",
       ],
     ],
-    medicalNote:
-      "L’acupuncture peut compléter, mais ne remplace pas, un suivi médical. Sa pertinence et ses résultats varient selon chaque personne.",
+    medicalNote: "",
     practitionerEyebrow: "RENCONTREZ LILIANNE",
-    practitionerTitle: "Une véritable écoute.",
-    practitionerItalic: "Des soins qui vous voient.",
+    practitionerTitle: "Au cœur de ma pratique",
+    practitionerItalic: "Une vision globale",
     practitionerBody:
-      "Une pratique qui s’adapte à vous, loin des soins standardisés. Chaque visite commence par un échange, pour accueillir vos questions, respecter votre confort et comprendre ce qui compte pour vous.",
-    practitionerBody2:
-      "Une approche attentive et collaborative. Un lieu où rien ne presse. Et des soins qui vous accompagnent là où vous en êtes.",
-    practitionerName: "Lilianne",
-    practitionerCaption: "Lilianne Acupuncture · Des soins à votre écoute",
+      "En tant que membre de l’Ordre des acupuncteurs du Québec, j’adopte une approche attentive qui relie le bien-être physique et émotionnel. Plutôt que de concentrer le traitement sur une seule partie du corps, je prends le temps, lors de chaque séance, d'observer comment vous fonctionnez dans votre globalité. Cette vue d'ensemble me permet de mieux comprendre ce qui déclenche vos inconforts et de vous apporter un soulagement durable au quotidien.",
+    practitionerBody2: "",
     portraitAlt:
       "Lilianne souriante, assise près de plantes dans une pièce baignée de lumière douce",
-    practitionerLink: "Faisons connaissance",
+    practitionerLink: "Déroulement d'un premier traitement",
     experienceEyebrow: "VOTRE PREMIÈRE VISITE",
     experienceTitle: "Rien ne presse.",
     experienceItalic: "Tout invite à la confiance.",
@@ -291,53 +332,109 @@ export const translations = {
         "Nous échangeons sur votre ressenti et discutons des conseils et des prochaines étapes.",
       ],
     ],
-    servicesEyebrow: "DU TEMPS POUR VOUS",
-    servicesTitle: "Des soins à votre rythme.",
-    services: [
-      [
-        "Votre premier rendez-vous",
-        "Un échange approfondi, un bilan personnalisé et votre première séance d’acupuncture.",
-        "Prévoir 60 à 90 minutes",
-      ],
-      [
-        "Poursuivre votre suivi",
-        "Un point sur votre ressenti, suivi d’un soin adapté à vos besoins du moment.",
-        "Prévoir 45 à 60 minutes",
-      ],
+    hoursLocationsEyebrow: "LIEUX & DISPONIBILITÉS",
+    hoursLocationsTitle: "Horaire & lieux de pratique",
+    hoursInfo: "Sur rendez-vous · horaires à confirmer",
+    locationInfo: "120 Rue de Grande-Île, Salaberry-de-Valleyfield, QC J6S 3M6",
+    servicesEyebrow: "",
+    servicesTitle: "Services et tarifs",
+    serviceOfferings: [
+      {
+        id: "acupuncture-privee",
+        title: "Acupuncture privée",
+        description:
+          "Un accompagnement individuel dans un espace calme, adapté à vos besoins.",
+        image: "/images/acupuncture-private.jpg",
+        imageAlt: "Une acupuncteure offrant un traitement privé",
+        priceGroups: [
+          {
+            title: "Tarifs réguliers",
+            prices: [
+              ["Premier rendez-vous", "110 $"],
+              ["Suivi", "90 $"],
+            ],
+          },
+          {
+            title: "Membres OVPAC",
+            prices: [
+              ["Premier rendez-vous", "85 $"],
+              ["Suivi", "65 $"],
+            ],
+          },
+        ],
+      },
+      {
+        id: "acupuncture-sociale",
+        title: "Acupuncture sociale",
+        description:
+          "Des séances d’acupuncture dans un espace partagé et accueillant.",
+        image: "/images/acupuncture-social.jpg",
+        imageAlt: "Une séance d’acupuncture dans un espace partagé",
+        priceGroups: [
+          {
+            title: "Tarif régulier",
+            prices: [["Séance", "40 $"]],
+          },
+          {
+            title: "Membres OVPAC",
+            prices: [["Séance", "40 $"]],
+          },
+        ],
+      },
     ],
-    pricing: "Tarifs à confirmer",
-    durationNote: "Durées indicatives, confirmées lors de la réservation.",
+    serviceDiscountNote:
+      "Le rabais de 25 $ pour les membres OVPAC est déjà inclus dans les tarifs indiqués.",
+    serviceReceiptNote: "Un reçu vous sera remis pour vos assurances.",
+    firstVisitPageTitle: "Déroulement d'un premier traitement",
+    firstVisitDescription:
+      "Découvrez les étapes d’un premier traitement, de la première conversation aux conseils après la séance.",
     pauseTop: "VOUS N’AVEZ PAS À EN FAIRE PLUS.",
     pauseTitle: "Parfois, il suffit",
     pauseItalic: "simplement d’être.",
-    faqEyebrow: "QUELQUES MOTS POUR VOUS RASSURER",
-    faqTitle: "Vous vous demandez peut-être…",
+    faqTitle: "Les questions fréquentes",
+    faqContactPrompt:
+      "Si vous avez toute autre question, n’hésitez pas à me contacter.",
     faqs: [
       [
+        "Doit-on y croire pour voir des résultats ?",
+        "Non, il n’est pas nécessaire de croire en l’acupuncture pour en ressentir les effets. Chaque personne réagit différemment aux traitements, et les résultats ne dépendent pas de vos croyances ou de vos attentes. La stimulation des aiguilles entraîne des réponses physiologiques dans le corps, notamment au niveau du système nerveux, pouvant contribuer à la modulation de la douleur et à différentes réponses de l’organisme. Garder une attitude ouverte permet toutefois d’être davantage à l’écoute de ses sensations et de mieux percevoir les changements qui peuvent survenir au fil des traitements.",
+      ],
+      [
         "L’acupuncture est-elle douloureuse ?",
-        "Les aiguilles sont très fines. Vous pouvez ressentir un léger pincement, de la chaleur ou des picotements. Signalez tout inconfort : votre bien-être et votre consentement guident chaque étape.",
+        "Les aiguilles sont très fines. Certaines personnes ne les sentent pas, tandis que d’autres peuvent ressentir un léger pincement, une sensation de chaleur ou une légère lourdeur. Ces sensations sont tout à fait normales et se dissipent rapidement.",
       ],
       [
-        "Comment se déroule la première séance ?",
-        "Nous discutons de vos antécédents, de vos préoccupations et de vos objectifs. Votre praticienne explique le soin proposé et répond à vos questions. Le traitement commence uniquement avec votre consentement.",
+        "Quelles mesures d’hygiène sont appliquées durant les traitements ?",
+        "Les soins sont effectués dans le respect des normes d’hygiène et de sécurité. Toutes les aiguilles sont stériles, à usage unique et jetées après chaque traitement. Le matériel et les surfaces sont également nettoyés et désinfectés entre chaque rendez-vous afin de vous offrir un environnement propre et sécuritaire.",
       ],
       [
-        "Combien de temps dure une séance ?",
-        "Prévoyez généralement 60 à 90 minutes pour la première visite et 45 à 60 minutes pour les suivantes. Les durées exactes seront confirmées à l’ouverture des réservations.",
+        "Quelle est la durée d’un traitement ?",
+        "Prévoyez environ 1 h à 1 h 15 pour un premier rendez-vous, qui comprend un bilan de santé complet, une discussion sur vos besoins et votre condition, ainsi que le traitement d’acupuncture. Les rendez-vous de suivi durent environ 45 à 50 minutes et permettent de faire le point sur votre évolution et d’adapter le traitement au besoin. Les séances d’acupuncture sociale durent environ 30 à 60 minutes, selon vos besoins individuels.",
+      ],
+      [
+        "Combien de séances sont nécessaires ?",
+        "Le nombre de traitements varie selon plusieurs facteurs, notamment la nature et l’ancienneté de la problématique, son évolution, les habitudes de vie ainsi que la réponse de chaque personne aux traitements. Lors d’un inconfort aigu, les séances peuvent être plus rapprochées au départ, puis s’espacer progressivement à mesure que la situation évolue. Pour les problématiques plus chroniques, un suivi sur une plus longue période peut être nécessaire. La fréquence et le nombre de séances sont réévalués au fil des rencontres, selon vos besoins et votre progression. Nous pourrons discuter ensemble de la fréquence et du suivi qui conviendraient le mieux à votre situation lors de votre premier rendez-vous.",
       ],
       [
         "Comment préparer mon rendez-vous ?",
-        "Portez des vêtements confortables, prenez un repas léger avant la séance et apportez la liste de vos médicaments et vos informations de santé utiles. Signalez toute grossesse ou affection médicale.",
+        "Portez des vêtements confortables et faciles à ajuster, comme un pantalon ample ou un short, puisque certains points peuvent se situer au niveau des genoux et des coudes. Prenez un repas léger avant la séance et apportez la liste de vos médicaments et vos informations de santé utiles.",
       ],
       [
-        "De combien de séances aurai-je besoin ?",
-        "Cela dépend de vos objectifs, de votre histoire et de votre réponse aux soins. Nous réévaluons le suivi ensemble, sans promettre de résultat précis.",
+        "Les traitements sont-ils couverts par les assurances ?",
+        "Plusieurs assurances privées couvrent les soins d’acupuncture. Un reçu vous sera remis après chaque séance. N’hésitez pas à vérifier auprès de votre assureur les modalités de remboursement de votre couverture.",
       ],
       [
-        "Les séances sont-elles remboursées ?",
-        "La prise en charge varie selon votre assurance, votre pays et les qualifications du praticien. Consultez votre contrat et vérifiez l’inscription professionnelle ainsi que la disponibilité de reçus avant de réserver.",
+        "Les dossiers CNESST et SAAQ sont-ils acceptés ?",
+        {
+          text: "Oui, mais seulement chez ",
+          linkText: "Action Sport Physio",
+          href: "https://actionsportphysio.com/fr/clinique-physiotherapie-valleyfield#",
+          phoneText: "Vous devez les contacter directement au ",
+          phoneDisplay: "(450) 373-0111",
+          phoneHref: "tel:+14503730111",
+        },
       ],
-    ],
+    ] as const,
     contactEyebrow: "UN NOUVEAU CHAPITRE",
     contactTitle: "Un peu de temps.",
     contactItalic: "Rien que pour vous.",
@@ -351,11 +448,9 @@ export const translations = {
     ],
     name: "Votre nom",
     email: "Adresse courriel",
-    message: "Qu’est-ce qui vous amène ?",
+    message: "Comment pouvons-nous vous aider ?",
     namePlaceholder: "Prénom et nom",
     emailPlaceholder: "vous@exemple.fr",
-    messagePlaceholder:
-      "Une question, un horaire souhaité ou simplement un bonjour…",
     formAction: "Préparer ma demande",
     formNote:
       "Aperçu : la réservation et l’envoi ne sont pas connectés. Vous pouvez préparer et télécharger votre demande. Merci de ne pas inclure de données de santé sensibles.",
@@ -364,6 +459,8 @@ export const translations = {
       "Il s’agit uniquement d’un brouillon. Rien n’a été envoyé et aucun rendez-vous n’a été réservé. Téléchargez-le en attendant les coordonnées du cabinet.",
     download: "Télécharger ma demande",
     footerLine: "Une façon plus douce de vous retrouver.",
+    homeLabel: "Lilianne Acupuncture — accueil",
+    footerNavLabel: "Navigation de pied de page",
     privacy: "Confidentialité",
     copyright: "Tous droits réservés.",
     privacyTitle: "Votre vie privée compte",

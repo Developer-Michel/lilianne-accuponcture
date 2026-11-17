@@ -5,15 +5,12 @@ import {
   ArrowDown,
   ArrowUpRight,
   Sprout,
-  Leaf,
   Heart,
   Moon,
   Wind,
   Flower2,
   Waves,
   Sun,
-  Globe,
-  Link,
 } from "lucide-react";
 import {
   motion,
@@ -24,7 +21,8 @@ import {
   useTransform,
 } from "motion/react";
 import { useEffect, type ReactNode } from "react";
-import { SiteHeader, Brand, navIds } from "@/components/site-header";
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
 import { ContactSection } from "@/components/contact-section";
 import {
   Accordion,
@@ -32,16 +30,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Button, buttonVariants } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { translations, type Locale } from "@/lib/translations";
 import { BOOKING_URL } from "@/lib/links";
@@ -204,11 +193,52 @@ export function WellnessSite({ locale }: { locale: Locale }) {
             <Reveal className="approach-copy" delay={0.1}>
               <h2>
                 {copy.introTitle}
-                <br />
-                <em>{copy.introItalic}</em>
+                {copy.introItalic && (
+                  <>
+                    <br />
+                    <em>{copy.introItalic}</em>
+                  </>
+                )}
               </h2>
               <p className="body-copy">{copy.introBody}</p>
-              <p className="body-copy">{copy.introBody2}</p>
+              {copy.introBody2 && (
+                <p className="body-copy">{copy.introBody2}</p>
+              )}
+            </Reveal>
+          </div>
+        </section>
+
+        <section
+          id="practitioner"
+          className="section-pad practitioner-section background-cover"
+        >
+          <div className="container practitioner-grid">
+            <Reveal>
+              <p className="eyebrow">{copy.practitionerEyebrow}</p>
+              <h2>
+                {copy.practitionerTitle}
+                <br />
+                <em>{copy.practitionerItalic}</em>
+              </h2>
+              <p className="body-copy">{copy.practitionerBody}</p>
+              {copy.practitionerBody2 && (
+                <p className="body-copy">{copy.practitionerBody2}</p>
+              )}
+              <a href={`/${locale}/first-visit`} className="text-link">
+                {copy.practitionerLink}
+                <ArrowUpRight size={16} />
+              </a>
+            </Reveal>
+            <Reveal className="practitioner-profile">
+              <div className="practitioner-portrait image-wrap">
+                <Image
+                  src="/images/lilianne-portrait.jpg"
+                  alt={copy.portraitAlt}
+                  fill
+                  sizes="(max-width: 767px) 320px, 40vw"
+                  style={{ objectFit: "cover", objectPosition: "center 15%" }}
+                />
+              </div>
             </Reveal>
           </div>
         </section>
@@ -236,112 +266,91 @@ export function WellnessSite({ locale }: { locale: Locale }) {
                 );
               })}
             </div>
-            <p className="medical-note">{copy.medicalNote}</p>
-          </div>
-        </section>
-
-        <section
-          id="practitioner"
-          className="section-pad practitioner-section background-cover"
-        >
-          <div className="container practitioner-grid">
-            <Reveal>
-              <p className="eyebrow">{copy.practitionerEyebrow}</p>
-              <h2>
-                {copy.practitionerTitle}
-                <br />
-                <em>{copy.practitionerItalic}</em>
-              </h2>
-              <p className="body-copy">{copy.practitionerBody}</p>
-              <p className="body-copy">{copy.practitionerBody2}</p>
-              <a href="#contact" className="text-link">
-                {copy.practitionerLink}
-                <ArrowUpRight size={16} />
-              </a>
-            </Reveal>
-            <Reveal className="practitioner-profile">
-              <div className="practitioner-portrait image-wrap">
-                <Image
-                  src="/images/lilianne-portrait.jpg"
-                  alt={copy.portraitAlt}
-                  fill
-                  sizes="(max-width: 767px) 320px, 40vw"
-                  style={{ objectFit: "cover", objectPosition: "center 15%" }}
-                />
-              </div>
-              <h3>{copy.practitionerName}</h3>
-              <p>{copy.practitionerCaption}</p>
-            </Reveal>
-          </div>
-        </section>
-
-        <section id="experience" className="experience-section section-pad">
-          <div className="container">
-            <Reveal className="section-heading">
-              <p className="eyebrow">{copy.experienceEyebrow}</p>
-              <h2>
-                {copy.experienceTitle}
-                <br />
-                <em>{copy.experienceItalic}</em>
-              </h2>
-            </Reveal>
-            <div className="steps-grid">
-              {copy.steps.map(([title, description], index) => (
-                <Reveal
-                  className="step"
-                  key={title}
-                  delay={index * 0.6}
-                  fromLeft
-                >
-                  <span className="step-number">0{index + 1}</span>
-                  <h3>{title}</h3>
-                  <p>{description}</p>
-                </Reveal>
-              ))}
-            </div>
+            {copy.medicalNote && (
+              <p className="medical-note">{copy.medicalNote}</p>
+            )}
           </div>
         </section>
 
         <section
           id="treatments"
-          className="section-pad treatments-section background-cover-full"
+          className="section-pad services-section background-cover-full"
         >
-          <div className="container treatments-grid">
-            <Reveal>
+          <div className="container">
+            <Reveal className="section-heading centered">
               <p className="eyebrow">{copy.servicesEyebrow}</p>
               <h2>{copy.servicesTitle}</h2>
-              <Leaf
-                className="treatments-leaf"
-                size={100}
-                strokeWidth={0.5}
-                aria-hidden="true"
-              />
             </Reveal>
-            <div>
-              {copy.services.map(([title, description, duration], index) => (
-                <Reveal className="service-row" key={title}>
-                  <div className="service-title">
-                    <span>0{index + 1}</span>
-                    <h3>{title}</h3>
-                  </div>
-                  <p>{description}</p>
-                  <div className="service-meta">
-                    <span>{duration}</span>
-                    <span>{copy.pricing}</span>
-                  </div>
+            <div className="service-cards">
+              {copy.serviceOfferings.map((service, index) => (
+                <Reveal className="service-card" key={service.title}>
                   <a
-                    href={BOOKING_URL}
-                    className="text-link"
-                    target="_blank"
-                    rel="noreferrer"
+                    href={`/${locale}/services/${service.id}`}
+                    className="service-card-link"
                   >
-                    {copy.book}
-                    <Link size={16} />
+                    <div className="service-card-image image-wrap">
+                      <Image
+                        src={service.image}
+                        alt={service.imageAlt}
+                        fill
+                        sizes="(max-width: 767px) calc(100vw - 44px), 45vw"
+                      />
+                    </div>
+                    <div className="service-card-content">
+                      <p className="eyebrow">0{index + 1}</p>
+                      <h3>{service.title}</h3>
+                      <p className="service-description">
+                        {service.description}
+                      </p>
+                      <div
+                        className="service-price-groups"
+                        id={index === 0 ? "pricing" : undefined}
+                      >
+                        {service.priceGroups.map((group) => (
+                          <div
+                            className="service-price-group"
+                            key={group.title}
+                          >
+                            <h4>{group.title}</h4>
+                            <dl>
+                              {group.prices.map(([label, price]) => (
+                                <div key={label}>
+                                  <dt>{label}</dt>
+                                  <dd>{price}</dd>
+                                </div>
+                              ))}
+                            </dl>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="service-card-hover">
+                      <span className="learn-more-text">{copy.learnMore}</span>
+                    </div>
                   </a>
+                  <div className="service-actions">
+                    <a
+                      href={BOOKING_URL}
+                      className="service-card-booking text-link"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {copy.book}
+                      <ArrowUpRight size={16} />
+                    </a>
+                    <a
+                      href={`/${locale}/services/${service.id}`}
+                      className="service-card-learn-more text-link"
+                    >
+                      {copy.learnMore}
+                      <ArrowUpRight size={16} />
+                    </a>
+                  </div>
                 </Reveal>
               ))}
-              <p className="form-note">{copy.durationNote}</p>
             </div>
+            <p className="service-note">{copy.serviceDiscountNote}</p>
+            <p className="service-note">{copy.serviceReceiptNote}</p>
           </div>
         </section>
 
@@ -362,8 +371,8 @@ export function WellnessSite({ locale }: { locale: Locale }) {
         <section id="faq" className="section-pad faq-section background-cover">
           <div className="container faq-grid">
             <Reveal fromLeft>
-              <p className="eyebrow">{copy.faqEyebrow}</p>
               <h2>{copy.faqTitle}</h2>
+              <p className="faq-contact-prompt">{copy.faqContactPrompt}</p>
               <p className="faq-decoration" aria-hidden="true">
                 ?
               </p>
@@ -375,7 +384,22 @@ export function WellnessSite({ locale }: { locale: Locale }) {
                   <AccordionItem value={`faq-${index}`}>
                     <AccordionTrigger>{question}</AccordionTrigger>
                     <AccordionContent>
-                      <p>{answer}</p>
+                      {typeof answer === "string" ? (
+                        <p>{answer}</p>
+                      ) : (
+                        <p>
+                          {answer.text}
+                          <a
+                            href={answer.href}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            {answer.linkText}
+                          </a>
+                          . {answer.phoneText}
+                          <a href={answer.phoneHref}>{answer.phoneDisplay}</a>.
+                        </p>
+                      )}
                     </AccordionContent>
                   </AccordionItem>
                 </Reveal>
@@ -385,60 +409,7 @@ export function WellnessSite({ locale }: { locale: Locale }) {
         </section>
         <ContactSection copy={copy} locale={locale} />
       </main>
-      <footer className="site-footer">
-        <div className="container">
-          <div className="footer-main">
-            <div>
-              <a
-                href="#"
-                aria-label={
-                  locale === "fr"
-                    ? "Lilianne Acupuncture — accueil"
-                    : "Lilianne Acupuncture — home"
-                }
-              >
-                <Brand subtitle={copy.brandSubtitle} />
-              </a>
-              <p>{copy.footerLine}</p>
-            </div>
-            <nav
-              aria-label={
-                locale === "fr"
-                  ? "Navigation de pied de page"
-                  : "Footer navigation"
-              }
-            >
-              {copy.nav.slice(0, 3).map((label, index) => (
-                <a className="nav-link" key={label} href={`#${navIds[index]}`}>
-                  {label}
-                </a>
-              ))}
-              <a className="nav-link" href="#contact">
-                Contact
-              </a>
-            </nav>
-          </div>
-          <div className="footer-bottom">
-            <span>
-              © {new Date().getFullYear()} Lilianne Acupuncture.{" "}
-              {copy.copyright}
-            </span>
-            <span>{copy.footerNote}</span>
-            <Dialog>
-              <DialogTrigger className="nav-link">{copy.privacy}</DialogTrigger>
-              <DialogContent showCloseButton={false}>
-                <DialogHeader>
-                  <DialogTitle>{copy.privacyTitle}</DialogTitle>
-                  <DialogDescription>{copy.privacyBody}</DialogDescription>
-                </DialogHeader>
-                <DialogClose render={<Button variant="outline" />}>
-                  {copy.close}
-                </DialogClose>
-              </DialogContent>
-            </Dialog>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter copy={copy} locale={locale} />
     </MotionConfig>
   );
 }

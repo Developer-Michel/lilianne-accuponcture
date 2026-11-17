@@ -1,14 +1,21 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState, type MouseEvent } from "react";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
-import { ArrowUpRight, Calendar, CalendarIcon, Menu, X } from "lucide-react";
+import { ArrowUpRight, CalendarIcon, ChevronDown, Menu, X } from "lucide-react";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { BOOKING_URL } from "@/lib/links";
 import type { Copy, Locale } from "@/lib/translations";
 
-export const navIds = ["approach", "practitioner", "treatments", "experience"];
+export const navIds = [
+  "approach",
+  "benefits",
+  "practitioner",
+  "treatments",
+  "infos",
+];
 
 export function Brand({ subtitle }: { subtitle: string }) {
   return (
@@ -33,6 +40,20 @@ export function Brand({ subtitle }: { subtitle: string }) {
 export function SiteHeader({ copy, locale }: { copy: Copy; locale: Locale }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
+  const menuToggleRef = useRef<HTMLButtonElement>(null);
+  const mobileNavRef = useRef<HTMLElement>(null);
+  const pathname = usePathname();
+  const homeHref = `/${locale}`;
+  const firstVisitHref = `${homeHref}/first-visit`;
+  const isFirstVisitPage = pathname.endsWith("/first-visit");
+  const languagePage = isFirstVisitPage ? "/first-visit" : "";
+
+  function handleNavLinkClick(event: MouseEvent<HTMLAnchorElement>) {
+    event.currentTarget.closest("details")?.removeAttribute("open");
+    setOpen(false);
+  }
+
   useEffect(() => {
     document.documentElement.lang = locale;
     const onScroll = () => setScrolled(window.scrollY > 0);
@@ -40,26 +61,112 @@ export function SiteHeader({ copy, locale }: { copy: Copy; locale: Locale }) {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, [locale]);
+
   useEffect(() => {
-    const closeOnEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
+    function handleOutsideClick(event: globalThis.MouseEvent) {
+      const target = event.target;
+      if (!(target instanceof Node)) return;
+
+      headerRef.current
+        ?.querySelectorAll<HTMLDetailsElement>(".nav-more[open]")
+        .forEach((dropdown) => {
+          if (!dropdown.contains(target)) dropdown.open = false;
+        });
+
+      if (
+        open &&
+        !mobileNavRef.current?.contains(target) &&
+        !menuToggleRef.current?.contains(target)
+      ) {
         setOpen(false);
-        document.getElementById("menu-toggle")?.focus();
       }
+    }
+
+    function handleEscape(event: KeyboardEvent) {
+      if (event.key !== "Escape") return;
+
+      const dropdown =
+        headerRef.current?.querySelector<HTMLDetailsElement>(".nav-more[open]");
+      if (dropdown) {
+        dropdown.open = false;
+        dropdown.querySelector("summary")?.focus();
+      } else if (open) {
+        setOpen(false);
+        menuToggleRef.current?.focus();
+      }
+    }
+
+    document.addEventListener("click", handleOutsideClick, true);
+    document.addEventListener("keydown", handleEscape);
+    return () => {
+      document.removeEventListener("click", handleOutsideClick, true);
+      document.removeEventListener("keydown", handleEscape);
     };
-    if (open) document.addEventListener("keydown", closeOnEscape);
-    return () => document.removeEventListener("keydown", closeOnEscape);
   }, [open]);
+
+  function renderNavLinks() {
+    return copy.nav.map((text, index) => {
+      const id = navIds[index];
+      if (id === "infos") {
+        return (
+          <details key={id} className="nav-more">
+            <summary className="nav-link">
+              {text}
+              <ChevronDown size={14} aria-hidden="true" />
+            </summary>
+            <div className="nav-more-menu">
+              <a
+                className="nav-link"
+                href={`${homeHref}#hours-locations`}
+                onClick={handleNavLinkClick}
+              >
+                {locale === "fr"
+                  ? "Horaire & lieux de pratique"
+                  : "Hours & locations"}
+              </a>
+              <a
+                className="nav-link"
+                href={`${homeHref}#contact`}
+                onClick={handleNavLinkClick}
+              >
+                Contact
+              </a>
+              <a
+                className="nav-link"
+                href={`${homeHref}#faq`}
+                onClick={handleNavLinkClick}
+              >
+                FAQ
+              </a>
+            </div>
+          </details>
+        );
+      }
+      return (
+        <a
+          key={id}
+          className="nav-link"
+          href={`${homeHref}#${id}`}
+          onClick={handleNavLinkClick}
+        >
+          {text}
+        </a>
+      );
+    });
+  }
 
   return (
     <>
       <a className="skip-link" href="#main">
         {copy.skip}
       </a>
-      <header className={cn("site-header", scrolled && "is-scrolled")}>
+      <header
+        ref={headerRef}
+        className={cn("site-header", scrolled && "is-scrolled")}
+      >
         <div className="header-inner container">
           <a
-            href="#"
+            href={homeHref}
             className="brand-link"
             aria-label={
               locale === "fr"
@@ -75,15 +182,7 @@ export function SiteHeader({ copy, locale }: { copy: Copy; locale: Locale }) {
               locale === "fr" ? "Navigation principale" : "Main navigation"
             }
           >
-            {copy.nav.map((text, index) => (
-              <a
-                key={navIds[index]}
-                className="nav-link"
-                href={`#${navIds[index]}`}
-              >
-                {text}
-              </a>
-            ))}
+            {renderNavLinks()}
           </nav>
           <div className="header-actions">
             <div
@@ -91,7 +190,7 @@ export function SiteHeader({ copy, locale }: { copy: Copy; locale: Locale }) {
               aria-label={locale === "fr" ? "Langue" : "Language"}
             >
               <a
-                href="/en"
+                href={`/en${languagePage}`}
                 lang="en"
                 hrefLang="en"
                 aria-label="Read in English"
@@ -102,7 +201,7 @@ export function SiteHeader({ copy, locale }: { copy: Copy; locale: Locale }) {
               </a>
               <span aria-hidden="true">/</span>
               <a
-                href="/fr"
+                href={`/fr${languagePage}`}
                 lang="fr"
                 hrefLang="fr"
                 aria-label="Lire en français"
@@ -123,41 +222,35 @@ export function SiteHeader({ copy, locale }: { copy: Copy; locale: Locale }) {
               <ArrowUpRight data-icon="inline-end" />
             </a>
             <Button
+              ref={menuToggleRef}
               id="menu-toggle"
+              type="button"
               variant="ghost"
               size="icon"
               className="menu-toggle"
-              onClick={() => setOpen(!open)}
+              onClick={() => setOpen((current) => !current)}
               aria-expanded={open}
               aria-controls="mobile-nav"
               aria-label={open ? copy.close : copy.menu}
             >
-              {open ? <X /> : <Menu />}
+              {open ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
             </Button>
           </div>
         </div>
         <nav
+          ref={mobileNavRef}
           id="mobile-nav"
           className={cn("mobile-nav", open && "is-open")}
-          aria-hidden={!open}
+          inert={!open}
           aria-label={
             locale === "fr" ? "Navigation mobile" : "Mobile navigation"
           }
         >
-          {copy.nav.map((text, index) => (
-            <a
-              key={navIds[index]}
-              className="nav-link"
-              href={`#${navIds[index]}`}
-              onClick={() => setOpen(false)}
-            >
-              {text}
-            </a>
-          ))}
+          {renderNavLinks()}
           <a
             href={BOOKING_URL}
             className={buttonVariants()}
-            onClick={() => setOpen(false)}
+            onClick={handleNavLinkClick}
             target="_blank"
             rel="noreferrer"
           >
