@@ -40,9 +40,6 @@ export function SiteFooter({
                 {label}
               </a>
             ))}
-            <a className="nav-link" href={`${homeHref}/first-visit`}>
-              {copy.practitionerLink}
-            </a>
             <a className="nav-link" href={`${homeHref}#contact`}>
               {copy.nav[5]}
             </a>

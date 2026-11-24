@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { FirstVisitPage } from "@/components/first-visit-page";
+import { AcupunctureInfoPage } from "@/components/acupuncture-info-page";
 import { translations, type Locale } from "@/lib/translations";
 
 type PageProps = { params: Promise<{ lang: string }> };
@@ -20,17 +20,17 @@ export async function generateMetadata({
   const locale = getLocale((await params).lang);
   if (!locale) return {};
 
-  const copy = translations[locale];
-  const pagePath = `/${locale}/first-visit`;
+  const info = translations[locale].acupunctureInfo;
+  const pagePath = `/${locale}/acupuncture`;
 
   return {
-    title: copy.firstVisitPageTitle,
-    description: copy.firstVisitDescription,
+    title: info.title,
+    description: info.description,
     alternates: {
       canonical: pagePath,
       languages: {
-        en: "/en/first-visit",
-        fr: "/fr/first-visit",
+        en: "/en/acupuncture",
+        fr: "/fr/acupuncture",
       },
     },
   };
@@ -40,5 +40,7 @@ export default async function Page({ params }: PageProps) {
   const locale = getLocale((await params).lang);
   if (!locale) notFound();
 
-  return <FirstVisitPage copy={translations[locale]} locale={locale} />;
+  return (
+    <AcupunctureInfoPage copy={translations[locale]} locale={locale} />
+  );
 }

@@ -209,7 +209,6 @@ Entire card clickable for service details
 
 Routes Generated:
 ✓ /en, /fr
-✓ /en/first-visit, /fr/first-visit
 ✓ /en/services/private-acupuncture
 ✓ /en/services/social-acupuncture
 ✓ /fr/services/acupuncture-privee

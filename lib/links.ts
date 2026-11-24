@@ -1,1 +1,1 @@
-export const BOOKING_URL = "https://www.gorendezvous.com/en/homepage/141889";
+export const BOOKING_URL = "https://www.gorendezvous.com/fr/homepage/141889";

@@ -959,6 +959,14 @@ a.group\/button {
   border: 1px solid var(--border);
   box-shadow: 0 12px 30px #26382c14;
 }
+.nav-more-menu::before {
+  content: "";
+  position: absolute;
+  top: -9px;
+  left: 0;
+  right: 0;
+  height: 9px;
+}
 .nav-more-menu .nav-link {
   display: block;
   white-space: normal;
@@ -1263,7 +1271,6 @@ a.hero-book {
   color: var(--secondary);
 }
 .benefits-section .body-copy,
-.benefits-section .benefit p,
 .benefits-section .medical-note {
   color: #ecf0e4cf;
 }
@@ -1277,19 +1284,15 @@ a.hero-book {
   padding-top: 25px;
   border-top: 1px solid #ffffff35;
 }
-.benefit > svg {
-  color: var(--secondary);
-  margin-bottom: 22px;
-}
 .benefit h3 {
-  font-size: 27px;
+  font-size: 23px;
 }
-.benefit p {
-  font-size: 16px;
-  line-height: 1.8;
-  color: var(--muted-foreground);
-  margin-top: 13px;
-  max-width: 275px;
+.benefits-more {
+  margin-top: 36px;
+  text-align: center;
+  font-size: 14px;
+  font-style: italic;
+  color: #ecf0e4cf;
 }
 .medical-note {
   font-size: 13px;
@@ -1327,59 +1330,6 @@ a.hero-book {
 }
 .experience-section h2 em {
   color: var(--secondary);
-}
-.steps-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
-}
-.step {
-  border-top: 1px solid #ffffff35;
-  padding-top: 23px;
-}
-.step-number {
-  font-family: var(--font-editorial), serif;
-  color: #dce5d5c4;
-  font-size: 37px;
-}
-.step h3 {
-  margin-top: 25px;
-  font-size: 25px;
-}
-.step h2 {
-  margin-top: 25px;
-  font-size: 25px;
-}
-.step p {
-  font-size: 16px;
-  line-height: 1.85;
-  color: #ecf0e4cf;
-  margin-top: 15px;
-}
-.first-visit-hero {
-  min-height: 60vh;
-  display: flex;
-  align-items: flex-end;
-  padding-top: 120px;
-  background: linear-gradient(135deg, #f0f2eb 0%, #faf9f6 76%);
-}
-.first-visit-hero h1 {
-  max-width: 900px;
-  font-family: var(--font-editorial), Georgia, serif;
-  font-size: clamp(58px, 8vw, 104px);
-  font-weight: 400;
-  line-height: 0.92;
-  letter-spacing: -2px;
-}
-.first-visit-hero h1 em {
-  color: var(--primary);
-}
-.first-visit-summary {
-  max-width: 510px;
-  margin-top: 28px;
-  color: var(--muted-foreground);
-  font-size: 16px;
-  line-height: 1.8;
 }
 .service-cards {
   display: grid;
@@ -1561,6 +1511,9 @@ a.hero-book {
   line-height: 1.8;
   color: var(--muted-foreground);
 }
+.acupuncture-info-content .service-detail-block p + p {
+  margin-top: 16px;
+}
 .service-detail-pricing {
   padding: 80px 0;
   background: #eff1e9;
@@ -1684,6 +1637,8 @@ a.hero-book {
   padding-block: 24px;
   font-size: 16px;
   font-weight: 400;
+  font-family: var(--font-body), sans-serif;
+  line-height: 1.75;
   border-radius: 0;
 }
 .faq-section [data-slot="accordion-content"] {
@@ -2070,17 +2025,9 @@ a.hero-book {
   .benefit h3 {
     font-size: 24px;
   }
-  .benefit p {
-    font-size: 15px;
-  }
   .service-description,
-  .first-visit-summary,
   .service-detail-block p {
     font-size: 15px;
-  }
-  .benefit > svg {
-    width: 26px;
-    height: 26px;
   }
   .medical-note {
     text-align: left;
@@ -2089,10 +2036,6 @@ a.hero-book {
     max-width: 320px;
     width: 100%;
     margin-inline: auto;
-  }
-  .steps-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 35px 25px;
   }
   .service-cards {
     grid-template-columns: 1fr;
@@ -2118,21 +2061,6 @@ a.hero-book {
   .service-card-learn-more {
     margin-left: auto;
   }
-  .first-visit-hero {
-    min-height: 56vh;
-  }
-  .first-visit-hero h1 {
-    font-size: clamp(48px, 11vw, 72px);
-  }
-  .step h3 {
-    font-size: 25px;
-  }
-  .step h2 {
-    font-size: 25px;
-  }
-  .step p {
-    font-size: 15px;
-  }
   .visual-pause {
     min-height: 350px;
   }
@@ -2140,7 +2068,7 @@ a.hero-book {
     font-size: 51px;
   }
   .faq-section [data-slot="accordion-trigger"] {
-    font-size: 16px;
+    font-size: 15px;
   }
   .faq-section [data-slot="accordion-content"] {
     font-size: 15px;

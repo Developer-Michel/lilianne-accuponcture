@@ -287,8 +287,6 @@ export function ServiceDetailPage({
             </div>
           </div>
         </section>
-
-        <ContactSection copy={copy} locale={locale} />
       </main>
       <SiteFooter copy={copy} locale={locale} />
     </MotionConfig>

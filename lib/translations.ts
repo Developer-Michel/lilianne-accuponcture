@@ -43,39 +43,79 @@ export const translations = {
       "Sometimes, feeling better begins with slowing down. Rooted in traditional Chinese medicine, acupuncture uses very fine needles at specific points on the body as part of an individualized approach to care.",
     introBody2:
       "Here, your story comes first. Together, we make space to understand how you feel, what you need, and what well-being means to you.",
-    introLink: "Explore our approach",
+    introLink: "Learn more about acupuncture",
+    acupunctureInfo: {
+      eyebrow: "UNDERSTANDING ACUPUNCTURE",
+      title: "Acupuncture, in detail",
+      description:
+        "Learn what acupuncture involves, what a session is like, how treatment plans are made, and what to know about benefits and safety.",
+      backLink: "Back to acupuncture overview",
+      sections: [
+        {
+          heading: "What is acupuncture?",
+          paragraphs: [
+            "Acupuncture is a health-care practice in which a trained practitioner places very fine, sterile, single-use needles at selected points on the body. The points and approach are chosen after discussing your health history, current concerns, and goals.",
+            "In traditional Chinese medicine, acupuncture is understood through a system of points and patterns of balance. Contemporary research also studies how needling may influence the nervous system, pain processing, and other body responses. These perspectives use different frameworks, and no single explanation accounts for every person’s experience.",
+          ],
+        },
+        {
+          heading: "What happens during a session?",
+          paragraphs: [
+            "A first appointment begins with a conversation about your health history, symptoms, medications, lifestyle, and what you hope to address. Your practitioner explains the proposed approach, answers your questions, and asks for your consent before treatment. You can ask to pause or stop at any time.",
+            "During treatment, fine needles are placed at selected points and may remain in place while you rest. Sensations vary: some people notice very little, while others feel a brief pinch, warmth, tingling, or heaviness. Let your practitioner know if anything feels uncomfortable.",
+            "At this clinic, allow about 1 hour to 1 hour 15 minutes for a first appointment, including a health assessment and treatment. Follow-up appointments are about 45 to 50 minutes. Social acupuncture sessions are about 30 to 60 minutes, depending on individual needs.",
+          ],
+        },
+        {
+          heading: "What may acupuncture help with?",
+          paragraphs: [
+            "People seek acupuncture for concerns such as pain, muscle tension, headaches, stress, sleep difficulties, and general well-being. Research findings and clinical recommendations vary by condition, and acupuncture does not help everyone in the same way. A conversation with your practitioner can help clarify whether it may be appropriate for your situation and what realistic goals might look like.",
+            "Acupuncture may complement other health care, but it does not replace medical assessment, prescribed treatment, or urgent care. Speak with a health professional about new, severe, or worsening symptoms.",
+          ],
+        },
+        {
+          heading: "How are treatment plans made?",
+          paragraphs: [
+            "There is no standard number of sessions for everyone. The recommended frequency and duration depend on the nature and history of the concern, your health and lifestyle, your goals, and how you respond. For a recent or acute concern, appointments may be closer together at first and then spaced out as things change. Longer-standing concerns may call for follow-up over a longer period.",
+            "Your progress and plan are reviewed together over time. You can discuss what feels helpful, raise concerns, and revisit the frequency of visits. Results and timelines cannot be guaranteed.",
+          ],
+        },
+        {
+          heading: "Safety, hygiene, and possible effects",
+          paragraphs: [
+            "All needles used here are sterile, single-use, and discarded after treatment. Equipment and surfaces are cleaned and disinfected between appointments.",
+            "Temporary effects can include mild soreness, a small bruise, slight bleeding, tiredness, or light-headedness. More serious complications are uncommon when acupuncture is provided with appropriate training and sterile technique, but risks are not zero. Tell your practitioner about relevant health conditions, pregnancy, bleeding concerns, and medications such as blood thinners before treatment.",
+          ],
+        },
+        {
+          heading: "How can I prepare?",
+          paragraphs: [
+            "Wear comfortable clothing that can be adjusted easily, and consider having a light meal before your appointment. Bring a list of your medications and any health information that may be useful. You are welcome to ask questions before, during, or after the session and to share any changes in how you feel.",
+          ],
+        },
+      ],
+    },
     treatmentAlt:
       "Lilianne carefully placing acupuncture needles during a back treatment",
     benefitsEyebrow: "SUPPORT FOR YOUR EVERYDAY",
-    benefitsTitle: "Find your own balance.",
+    benefitsTitle: "Common reasons to consult",
     benefitsDescription:
-      "Different reasons to come. The same intention: to help you feel more at ease.",
+      "If your condition isn’t listed here, don’t hesitate to contact me and we can discuss it.",
     benefits: [
-      [
-        "Stress & relaxation",
-        "A moment to unwind and find a little more ease in your day.",
-      ],
-      [
-        "Tension & discomfort",
-        "Thoughtful support for muscular tension and pain management.",
-      ],
-      [
-        "Sleep & rest",
-        "Space to explore what is getting in the way of restorative rest.",
-      ],
-      [
-        "Headaches & migraines",
-        "An individualized approach to recurring head discomfort.",
-      ],
-      [
-        "Women’s well-being",
-        "Supportive care through the different seasons of your life.",
-      ],
-      [
-        "Everyday balance",
-        "A regular pause to reconnect with your body and yourself.",
-      ],
+      "Digestive issues",
+      "Seasonal allergies & immune system support",
+      "Hormonal imbalances",
+      "Pain & tension",
+      "Stress & anxiety",
+      "Headaches & migraines",
+      "Long COVID",
+      "Pregnancy",
+      "Sleep disorders",
+      "Fatigue",
+      "Support during oncology treatments",
+      "Smoking cessation support",
     ],
+    benefitsMore: "And more..",
     medicalNote:
       "Acupuncture may complement, but does not replace, medical care. Suitability and outcomes vary for each person.",
     practitionerEyebrow: "MEET LILIANNE",
@@ -86,28 +126,6 @@ export const translations = {
     practitionerBody2:
       "A thoughtful, collaborative approach. An unhurried environment. And care that meets you where you are.",
     portraitAlt: "Lilianne smiling, seated beside plants in a softly lit room",
-    practitionerLink: "Your first visit",
-    experienceEyebrow: "YOUR FIRST VISIT",
-    experienceTitle: "Nothing to rush.",
-    experienceItalic: "Everything to feel at ease.",
-    steps: [
-      [
-        "First, we listen",
-        "A relaxed conversation about your health, your history, and what brings you here.",
-      ],
-      [
-        "A plan, just for you",
-        "We discuss a personalized approach and answer your questions before beginning.",
-      ],
-      [
-        "Time to settle in",
-        "Fine, sterile, single-use needles are gently placed. You rest in a peaceful space.",
-      ],
-      [
-        "Take the calm with you",
-        "We reflect on your experience and discuss aftercare and any next steps together.",
-      ],
-    ],
     hoursLocationsEyebrow: "LOCATION & AVAILABILITY",
     hoursLocationsTitle: "Hours & locations",
     hoursInfo: "By appointment · hours to be confirmed",
@@ -160,9 +178,6 @@ export const translations = {
     serviceDiscountNote:
       "The $25 OVPAC member discount is already included in the member rates shown.",
     serviceReceiptNote: "A receipt will be provided for insurance claims.",
-    firstVisitPageTitle: "Your first visit",
-    firstVisitDescription:
-      "A look at what to expect, from your first conversation to aftercare.",
     pauseTop: "YOU DON’T HAVE TO DO MORE.",
     pauseTitle: "Sometimes, you just",
     pauseItalic: "need to be.",
@@ -193,6 +208,10 @@ export const translations = {
       [
         "Is acupuncture covered by insurance?",
         "Coverage varies by insurer, location, and practitioner credentials. Please check your plan directly and confirm the practitioner’s registration and receipt availability before booking.",
+      ],
+      [
+        "What is the appointment cancellation policy?",
+        "For any cancellation made less than 24 hours before the appointment, or any absence without notice, a fee of $45 will be charged for private acupuncture treatments and $20 for social acupuncture treatments.",
       ],
     ] as const,
     contactEyebrow: "YOUR NEXT CHAPTER",
@@ -268,39 +287,80 @@ export const translations = {
     introBody:
       "Issue d’un savoir-faire millénaire, l’acupuncture consiste à stimuler des points précis du corps afin d’encourager ses mécanismes naturels de guérison. Pour y parvenir, j'utilise principalement de fines aiguilles, complétées au besoin par d'autres approches comme le tuina, les ventouses ou la moxibustion. À la fois apaisante et régulatrice, cette discipline soulage la douleur et soutient l'équilibre global de l'organisme en agissant sur les systèmes nerveux, endocrinien et immunitaire.",
     introBody2: "",
-    introLink: "Explorer notre approche",
+    introLink: "En savoir plus sur l’acupuncture",
+    acupunctureInfo: {
+      eyebrow: "COMPRENDRE L’ACUPUNCTURE",
+      title: "L’acupuncture en détail",
+      description:
+        "Découvrez en quoi consiste l’acupuncture, le déroulement d’une séance, la planification des traitements ainsi que les bienfaits possibles et les précautions à connaître.",
+      backLink: "Retour à l’aperçu de l’acupuncture",
+      sections: [
+        {
+          heading: "Qu’est-ce que l’acupuncture ?",
+          paragraphs: [
+            "L’acupuncture est une pratique de soins qui consiste à insérer de très fines aiguilles stériles et à usage unique à des points précis du corps. Le choix des points et l’approche sont déterminés après une discussion sur votre santé, vos préoccupations et vos objectifs.",
+            "En médecine traditionnelle chinoise, l’acupuncture est comprise à partir d’un système de points et d’équilibres. La recherche contemporaine étudie également la façon dont la stimulation par les aiguilles pourrait influencer le système nerveux, le traitement de la douleur et d’autres réponses du corps. Ces perspectives reposent sur des cadres différents; une explication unique ne rend pas compte de l’expérience de chaque personne.",
+          ],
+        },
+        {
+          heading: "Comment se déroule une séance ?",
+          paragraphs: [
+            "Un premier rendez-vous commence par une discussion sur vos antécédents de santé, vos symptômes, vos médicaments, vos habitudes de vie et ce que vous souhaitez aborder. Votre acupuncteure vous explique l’approche proposée, répond à vos questions et obtient votre consentement avant le traitement. Vous pouvez demander une pause ou l’arrêt du traitement à tout moment.",
+            "Pendant le traitement, de fines aiguilles sont insérées aux points choisis et peuvent rester en place pendant que vous vous reposez. Les sensations varient : certaines personnes ressentent peu de choses, tandis que d’autres perçoivent un léger pincement, de la chaleur, des picotements ou une lourdeur. Avisez votre acupuncteure si vous ressentez un inconfort.",
+            "À la clinique, prévoyez environ 1 h à 1 h 15 pour un premier rendez-vous, incluant le bilan de santé et le traitement. Les rendez-vous de suivi durent environ 45 à 50 minutes. Les séances d’acupuncture sociale durent environ 30 à 60 minutes, selon les besoins individuels.",
+          ],
+        },
+        {
+          heading: "Pour quels motifs consulte-t-on en acupuncture ?",
+          paragraphs: [
+            "Les personnes consultent notamment pour des douleurs, des tensions musculaires, des maux de tête, du stress, des difficultés de sommeil ou pour soutenir leur bien-être général. Les résultats de recherche et les recommandations cliniques varient selon le problème, et l’acupuncture n’a pas le même effet chez tout le monde. Une discussion avec votre acupuncteure peut aider à déterminer si cette approche convient à votre situation et à établir des objectifs réalistes.",
+            "L’acupuncture peut compléter d’autres soins, mais ne remplace ni une évaluation médicale, ni un traitement prescrit, ni des soins urgents. Consultez un professionnel de la santé pour des symptômes nouveaux, importants ou qui s’aggravent.",
+          ],
+        },
+        {
+          heading: "Comment le plan de traitement est-il établi ?",
+          paragraphs: [
+            "Il n’existe pas de nombre de séances standard qui convienne à tout le monde. La fréquence et la durée du suivi dépendent de la nature et de l’ancienneté du problème, de votre santé et de vos habitudes de vie, de vos objectifs et de votre réponse au traitement. Pour un problème récent ou aigu, les rendez-vous peuvent être rapprochés au départ, puis espacés selon l’évolution. Un problème de longue durée peut nécessiter un suivi sur une plus longue période.",
+            "Votre évolution et votre plan sont réévalués ensemble au fil des rencontres. Vous pouvez discuter de ce qui vous aide, exprimer vos préoccupations et revoir la fréquence des séances. Les résultats et les délais ne peuvent pas être garantis.",
+          ],
+        },
+        {
+          heading: "Sécurité, hygiène et effets possibles",
+          paragraphs: [
+            "Toutes les aiguilles utilisées à la clinique sont stériles, à usage unique et jetées après le traitement. Le matériel et les surfaces sont nettoyés et désinfectés entre les rendez-vous.",
+            "Des effets temporaires peuvent inclure une légère sensibilité, un petit bleu, un léger saignement, de la fatigue ou une sensation de tête légère. Les complications plus sérieuses sont peu fréquentes lorsque le traitement est effectué par une personne formée et avec du matériel stérile, mais le risque n’est pas nul. Avant le traitement, informez votre acupuncteure de tout problème de santé pertinent, d’une grossesse, de troubles de coagulation ou de médicaments comme les anticoagulants.",
+          ],
+        },
+        {
+          heading: "Comment vous préparer ?",
+          paragraphs: [
+            "Portez des vêtements confortables et faciles à ajuster, et prenez un repas léger avant le rendez-vous. Apportez la liste de vos médicaments et toute information utile sur votre santé. Vous pouvez poser vos questions avant, pendant ou après la séance et faire part de tout changement dans votre état.",
+          ],
+        },
+      ],
+    },
     treatmentAlt:
       "Lilianne posant délicatement des aiguilles d’acupuncture lors d’un soin du dos",
     benefitsEyebrow: "UN SOUTIEN AU QUOTIDIEN",
-    benefitsTitle: "Retrouvez votre équilibre.",
+    benefitsTitle: "Raisons fréquentes de consulter",
     benefitsDescription:
-      "Des raisons différentes de venir. Une même intention : vous aider à vous sentir mieux.",
+      "Si votre condition ne s’y retrouve pas, n’hésitez pas à me contacter et nous pourrons en discuter.",
     benefits: [
-      [
-        "Stress et détente",
-        "Un moment pour relâcher la pression et retrouver un peu de sérénité.",
-      ],
-      [
-        "Tensions et inconfort",
-        "Un accompagnement attentif des tensions musculaires et de la douleur.",
-      ],
-      [
-        "Sommeil et repos",
-        "Un espace pour explorer ce qui freine un repos véritablement réparateur.",
-      ],
-      [
-        "Maux de tête et migraines",
-        "Une approche personnalisée des inconforts récurrents de la tête.",
-      ],
-      [
-        "Bien-être des femmes",
-        "Un accompagnement bienveillant au fil des étapes de votre vie.",
-      ],
-      [
-        "Équilibre au quotidien",
-        "Une pause régulière pour renouer avec votre corps et avec vous-même.",
-      ],
+      "Troubles digestifs",
+      "Allergies saisonnières et soutien du système immunitaire",
+      "Déséquilibres hormonaux",
+      "Douleurs et tensions",
+      "Stress et anxiété",
+      "Maux de tête et migraines",
+      "COVID longue",
+      "Grossesse",
+      "Troubles du sommeil",
+
+      "Fatigue",
+      "Soutien lors de traitements oncologiques",
+      "Soutien à l’arrêt tabagique",
     ],
+    benefitsMore: "Et plus encore..",
     medicalNote: "",
     practitionerEyebrow: "RENCONTREZ LILIANNE",
     practitionerTitle: "Au cœur de ma pratique",
@@ -310,28 +370,6 @@ export const translations = {
     practitionerBody2: "",
     portraitAlt:
       "Lilianne souriante, assise près de plantes dans une pièce baignée de lumière douce",
-    practitionerLink: "Déroulement d'un premier traitement",
-    experienceEyebrow: "VOTRE PREMIÈRE VISITE",
-    experienceTitle: "Rien ne presse.",
-    experienceItalic: "Tout invite à la confiance.",
-    steps: [
-      [
-        "D’abord, vous écouter",
-        "Un échange tranquille sur votre santé, votre histoire et ce qui vous amène.",
-      ],
-      [
-        "Un plan, rien que pour vous",
-        "Nous discutons d’une approche personnalisée et répondons à vos questions.",
-      ],
-      [
-        "Le temps de se poser",
-        "De fines aiguilles stériles à usage unique sont posées avec douceur. Vous vous reposez dans un cadre paisible.",
-      ],
-      [
-        "Emporter un peu de calme",
-        "Nous échangeons sur votre ressenti et discutons des conseils et des prochaines étapes.",
-      ],
-    ],
     hoursLocationsEyebrow: "LIEUX & DISPONIBILITÉS",
     hoursLocationsTitle: "Horaire & lieux de pratique",
     hoursInfo: "Sur rendez-vous · horaires à confirmer",
@@ -385,9 +423,6 @@ export const translations = {
     serviceDiscountNote:
       "Le rabais de 25 $ pour les membres OVPAC est déjà inclus dans les tarifs indiqués.",
     serviceReceiptNote: "Un reçu vous sera remis pour vos assurances.",
-    firstVisitPageTitle: "Déroulement d'un premier traitement",
-    firstVisitDescription:
-      "Découvrez les étapes d’un premier traitement, de la première conversation aux conseils après la séance.",
     pauseTop: "VOUS N’AVEZ PAS À EN FAIRE PLUS.",
     pauseTitle: "Parfois, il suffit",
     pauseItalic: "simplement d’être.",
@@ -396,32 +431,24 @@ export const translations = {
       "Si vous avez toute autre question, n’hésitez pas à me contacter.",
     faqs: [
       [
-        "Doit-on y croire pour voir des résultats ?",
-        "Non, il n’est pas nécessaire de croire en l’acupuncture pour en ressentir les effets. Chaque personne réagit différemment aux traitements, et les résultats ne dépendent pas de vos croyances ou de vos attentes. La stimulation des aiguilles entraîne des réponses physiologiques dans le corps, notamment au niveau du système nerveux, pouvant contribuer à la modulation de la douleur et à différentes réponses de l’organisme. Garder une attitude ouverte permet toutefois d’être davantage à l’écoute de ses sensations et de mieux percevoir les changements qui peuvent survenir au fil des traitements.",
+        "Comment préparer mon rendez-vous ?",
+        "Portez des vêtements confortables et faciles à ajuster, comme un pantalon ample ou un short, puisque certains points peuvent se situer au niveau des genoux et des coudes. Prenez un repas léger avant la séance et apportez la liste de vos médicaments et vos informations de santé utiles.",
       ],
       [
-        "L’acupuncture est-elle douloureuse ?",
-        "Les aiguilles sont très fines. Certaines personnes ne les sentent pas, tandis que d’autres peuvent ressentir un léger pincement, une sensation de chaleur ou une légère lourdeur. Ces sensations sont tout à fait normales et se dissipent rapidement.",
-      ],
-      [
-        "Quelles mesures d’hygiène sont appliquées durant les traitements ?",
-        "Les soins sont effectués dans le respect des normes d’hygiène et de sécurité. Toutes les aiguilles sont stériles, à usage unique et jetées après chaque traitement. Le matériel et les surfaces sont également nettoyés et désinfectés entre chaque rendez-vous afin de vous offrir un environnement propre et sécuritaire.",
-      ],
-      [
-        "Quelle est la durée d’un traitement ?",
-        "Prévoyez environ 1 h à 1 h 15 pour un premier rendez-vous, qui comprend un bilan de santé complet, une discussion sur vos besoins et votre condition, ainsi que le traitement d’acupuncture. Les rendez-vous de suivi durent environ 45 à 50 minutes et permettent de faire le point sur votre évolution et d’adapter le traitement au besoin. Les séances d’acupuncture sociale durent environ 30 à 60 minutes, selon vos besoins individuels.",
+        "Quelle est la durée d'un traitement ?",
+        "Prévoyez environ 1 h à 1 h 15 pour un premier rendez-vous, qui comprend un bilan de santé complet, une discussion sur vos besoins et votre condition, ainsi que le traitement d’acupuncture. Les rendez-vous de suivi sont d’environ 45 à 50 minutes et permettent de faire le point sur votre évolution et d’adapter le traitement au besoin. Les séances d’acupuncture sociale sont d’environ 30 à 60 minutes, selon vos besoins individuels.",
       ],
       [
         "Combien de séances sont nécessaires ?",
         "Le nombre de traitements varie selon plusieurs facteurs, notamment la nature et l’ancienneté de la problématique, son évolution, les habitudes de vie ainsi que la réponse de chaque personne aux traitements. Lors d’un inconfort aigu, les séances peuvent être plus rapprochées au départ, puis s’espacer progressivement à mesure que la situation évolue. Pour les problématiques plus chroniques, un suivi sur une plus longue période peut être nécessaire. La fréquence et le nombre de séances sont réévalués au fil des rencontres, selon vos besoins et votre progression. Nous pourrons discuter ensemble de la fréquence et du suivi qui conviendraient le mieux à votre situation lors de votre premier rendez-vous.",
       ],
       [
-        "Comment préparer mon rendez-vous ?",
-        "Portez des vêtements confortables et faciles à ajuster, comme un pantalon ample ou un short, puisque certains points peuvent se situer au niveau des genoux et des coudes. Prenez un repas léger avant la séance et apportez la liste de vos médicaments et vos informations de santé utiles.",
-      ],
-      [
         "Les traitements sont-ils couverts par les assurances ?",
         "Plusieurs assurances privées couvrent les soins d’acupuncture. Un reçu vous sera remis après chaque séance. N’hésitez pas à vérifier auprès de votre assureur les modalités de remboursement de votre couverture.",
+      ],
+      [
+        "L'acupuncture est-elle douloureuse ?",
+        "Les aiguilles sont très fines. Certaines personnes ne les sentent pas, tandis que d’autres peuvent ressentir un léger pincement, une sensation de chaleur ou une légère lourdeur. Ces sensations sont tout à fait normales et se dissipent rapidement.",
       ],
       [
         "Les dossiers CNESST et SAAQ sont-ils acceptés ?",
@@ -433,6 +460,18 @@ export const translations = {
           phoneDisplay: "(450) 373-0111",
           phoneHref: "tel:+14503730111",
         },
+      ],
+      [
+        "Doit-on y croire pour voir des résultats ?",
+        "Non, il n'est pas nécessaire de croire en l'acupuncture pour en ressentir les effets. Chaque personne réagit différemment aux traitements, et les résultats ne dépendent pas de vos croyances ou de vos attentes. La stimulation des aiguilles entraîne des réponses physiologiques dans le corps, notamment au niveau du système nerveux, pouvant contribuer à la modulation de la douleur et à différentes réponses de l'organisme.",
+      ],
+      [
+        "Quelles mesures d'hygiène sont appliquées durant les traitements ?",
+        "Les soins sont effectués dans le respect des normes d'hygiène et de sécurité. Toutes les aiguilles sont stériles, à usage unique et jetées après chaque traitement. Le matériel et les surfaces sont également nettoyés et désinfectés entre chaque rendez-vous afin de vous offrir un environnement propre et sécuritaire.",
+      ],
+      [
+        "Quelle est la politique d'annulation de rendez-vous ?",
+        "Pour toute annulation effectuée moins de 24 heures avant le rendez-vous ou toute absence sans préavis, des frais de 45 $ seront exigés pour les traitements d’acupuncture privée et de 20 $ pour les traitements d’acupuncture sociale.",
       ],
     ] as const,
     contactEyebrow: "UN NOUVEAU CHAPITRE",

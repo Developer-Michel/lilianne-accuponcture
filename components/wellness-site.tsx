@@ -6,10 +6,6 @@ import {
   ArrowUpRight,
   Sprout,
   Heart,
-  Moon,
-  Wind,
-  Flower2,
-  Waves,
   Sun,
 } from "lucide-react";
 import {
@@ -80,7 +76,6 @@ export function WellnessSite({ locale }: { locale: Locale }) {
     clamp: true,
   });
   const heroImageBlur = useMotionTemplate`blur(${heroImageBlurPx}px)`;
-  const benefitIcons = [Wind, Waves, Moon, Sun, Flower2, Sprout];
   const valueIcons = [Sprout, Heart, Sun];
   // useEffect(() => {
   //   if (!window.location.hash) return;
@@ -204,6 +199,10 @@ export function WellnessSite({ locale }: { locale: Locale }) {
               {copy.introBody2 && (
                 <p className="body-copy">{copy.introBody2}</p>
               )}
+              <a href={`/${locale}/acupuncture`} className="text-link">
+                {copy.introLink}
+                <ArrowUpRight size={16} />
+              </a>
             </Reveal>
           </div>
         </section>
@@ -224,10 +223,6 @@ export function WellnessSite({ locale }: { locale: Locale }) {
               {copy.practitionerBody2 && (
                 <p className="body-copy">{copy.practitionerBody2}</p>
               )}
-              <a href={`/${locale}/first-visit`} className="text-link">
-                {copy.practitionerLink}
-                <ArrowUpRight size={16} />
-              </a>
             </Reveal>
             <Reveal className="practitioner-profile">
               <div className="practitioner-portrait image-wrap">
@@ -246,26 +241,25 @@ export function WellnessSite({ locale }: { locale: Locale }) {
         <section id="benefits" className="benefits-section section-pad">
           <div className="container">
             <Reveal className="section-heading centered">
-              <p className="eyebrow">{copy.benefitsEyebrow}</p>
               <h2>{copy.benefitsTitle}</h2>
               <p className="body-copy">{copy.benefitsDescription}</p>
             </Reveal>
             <div className="benefits-grid">
-              {copy.benefits.map(([title, description], index) => {
-                const Icon = benefitIcons[index];
+              {copy.benefits.map((benefit, index) => {
                 return (
                   <Reveal
                     className="benefit"
-                    key={title}
+                    key={benefit}
                     delay={(index % 3) * 0.06}
                   >
-                    <Icon size={30} strokeWidth={1} aria-hidden="true" />
-                    <h3>{title}</h3>
-                    <p>{description}</p>
+                    <h3>{benefit}</h3>
                   </Reveal>
                 );
               })}
             </div>
+            <Reveal>
+              <p className="benefits-more">{copy.benefitsMore}</p>
+            </Reveal>
             {copy.medicalNote && (
               <p className="medical-note">{copy.medicalNote}</p>
             )}
@@ -373,9 +367,9 @@ export function WellnessSite({ locale }: { locale: Locale }) {
             <Reveal fromLeft>
               <h2>{copy.faqTitle}</h2>
               <p className="faq-contact-prompt">{copy.faqContactPrompt}</p>
-              <p className="faq-decoration" aria-hidden="true">
+              {/* <p className="faq-decoration" aria-hidden="true">
                 ?
-              </p>
+              </p> */}
             </Reveal>
 
             <Accordion>

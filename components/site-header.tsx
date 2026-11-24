@@ -11,8 +11,8 @@ import type { Copy, Locale } from "@/lib/translations";
 
 export const navIds = [
   "approach",
-  "benefits",
   "practitioner",
+  "benefits",
   "treatments",
   "infos",
 ];
@@ -45,13 +45,23 @@ export function SiteHeader({ copy, locale }: { copy: Copy; locale: Locale }) {
   const mobileNavRef = useRef<HTMLElement>(null);
   const pathname = usePathname();
   const homeHref = `/${locale}`;
-  const firstVisitHref = `${homeHref}/first-visit`;
-  const isFirstVisitPage = pathname.endsWith("/first-visit");
-  const languagePage = isFirstVisitPage ? "/first-visit" : "";
+  const languagePath = pathname.endsWith("/acupuncture") ? "/acupuncture" : "";
 
   function handleNavLinkClick(event: MouseEvent<HTMLAnchorElement>) {
     event.currentTarget.closest("details")?.removeAttribute("open");
     setOpen(false);
+  }
+
+  function canHover() {
+    return window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  }
+
+  function handleDropdownMouseEnter(event: MouseEvent<HTMLDetailsElement>) {
+    if (canHover()) event.currentTarget.open = true;
+  }
+
+  function handleDropdownMouseLeave(event: MouseEvent<HTMLDetailsElement>) {
+    if (canHover()) event.currentTarget.open = false;
   }
 
   useEffect(() => {
@@ -104,12 +114,42 @@ export function SiteHeader({ copy, locale }: { copy: Copy; locale: Locale }) {
     };
   }, [open]);
 
-  function renderNavLinks() {
+  function renderNavLinks(withHover = false) {
+    const hoverProps = withHover
+      ? {
+          onMouseEnter: handleDropdownMouseEnter,
+          onMouseLeave: handleDropdownMouseLeave,
+        }
+      : {};
     return copy.nav.map((text, index) => {
       const id = navIds[index];
+      if (id === "treatments") {
+        return (
+          <details key={id} className="nav-more" {...hoverProps}>
+            <summary className="nav-link">
+              <a href={`${homeHref}#treatments`} onClick={handleNavLinkClick}>
+                {text}
+              </a>
+              <ChevronDown size={14} aria-hidden="true" />
+            </summary>
+            <div className="nav-more-menu">
+              {copy.serviceOfferings.map((service) => (
+                <a
+                  key={service.id}
+                  className="nav-link"
+                  href={`/${locale}/services/${service.id}`}
+                  onClick={handleNavLinkClick}
+                >
+                  {service.title}
+                </a>
+              ))}
+            </div>
+          </details>
+        );
+      }
       if (id === "infos") {
         return (
-          <details key={id} className="nav-more">
+          <details key={id} className="nav-more" {...hoverProps}>
             <summary className="nav-link">
               {text}
               <ChevronDown size={14} aria-hidden="true" />
@@ -182,7 +222,7 @@ export function SiteHeader({ copy, locale }: { copy: Copy; locale: Locale }) {
               locale === "fr" ? "Navigation principale" : "Main navigation"
             }
           >
-            {renderNavLinks()}
+            {renderNavLinks(true)}
           </nav>
           <div className="header-actions">
             <div
@@ -190,7 +230,7 @@ export function SiteHeader({ copy, locale }: { copy: Copy; locale: Locale }) {
               aria-label={locale === "fr" ? "Langue" : "Language"}
             >
               <a
-                href={`/en${languagePage}`}
+                href={`/en${languagePath}`}
                 lang="en"
                 hrefLang="en"
                 aria-label="Read in English"
@@ -201,7 +241,7 @@ export function SiteHeader({ copy, locale }: { copy: Copy; locale: Locale }) {
               </a>
               <span aria-hidden="true">/</span>
               <a
-                href={`/fr${languagePage}`}
+                href={`/fr${languagePath}`}
                 lang="fr"
                 hrefLang="fr"
                 aria-label="Lire en français"

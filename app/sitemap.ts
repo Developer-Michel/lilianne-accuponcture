@@ -7,7 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: `${siteUrl}/fr` },
     { url: `${siteUrl}/en` },
-    { url: `${siteUrl}/fr/first-visit` },
-    { url: `${siteUrl}/en/first-visit` },
+    { url: `${siteUrl}/fr/acupuncture` },
+    { url: `${siteUrl}/en/acupuncture` },
   ];
 }
