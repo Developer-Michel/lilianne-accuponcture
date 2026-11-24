@@ -1274,6 +1274,11 @@ a.hero-book {
 .benefits-section .medical-note {
   color: #ecf0e4cf;
 }
+.benefits-contact-link {
+  color: var(--secondary);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
 .benefits-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1652,18 +1657,68 @@ a.hero-book {
 .contact-section {
   background: #eaf0e3;
 }
-.contact-availability {
-  margin-top: 34px;
+.locations-section {
+  background: #faf9f6;
 }
-.contact-availability h3 {
-  margin-top: 6px;
+.locations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  align-items: stretch;
+}
+.location-card {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  padding: 34px 30px;
+  background: #fff;
+  border: 1px solid #e2e5da;
+  border-radius: 3px;
+}
+.location-card h3 {
   font-family: var(--font-editorial), Georgia, serif;
   font-size: 24px;
   font-weight: 400;
 }
-.contact-availability .contact-details {
-  margin-top: 20px;
-  gap: 18px;
+.location-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+.location-detail svg {
+  flex-shrink: 0;
+  color: var(--primary);
+  margin-top: 1px;
+}
+.location-detail .eyebrow {
+  letter-spacing: 1.4px;
+  margin-bottom: 0;
+}
+.location-detail p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--muted-foreground);
+  margin-top: 6px;
+}
+.location-detail a {
+  color: var(--primary);
+}
+.location-hours {
+  list-style: none;
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.location-hours li {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted-foreground);
+}
+.location-map-link {
+  margin-top: 12px;
+  gap: 6px;
+  font-size: 13px;
 }
 .contact-grid {
   display: grid;
@@ -1693,6 +1748,13 @@ a.hero-book {
   color: var(--muted-foreground);
   margin-top: 6px;
 }
+.contact-detail a {
+  color: var(--primary);
+}
+.contact-book {
+  margin-top: 30px;
+  border-radius: 50px !important;
+}
 .contact-form {
   padding-top: 8px;
 }
@@ -1720,58 +1782,90 @@ a.hero-book {
   width: 100%;
   justify-content: space-between;
 }
-.form-note {
+.form-status {
   font-size: 13px;
-  line-height: 1.8;
-  color: var(--muted-foreground);
+  line-height: 1.6;
+  color: var(--primary);
 }
-.inquiry-draft {
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-  overflow-y: auto;
-  max-height: 220px;
-  font-family: inherit;
-  font-size: 12px;
-  padding: 15px;
-  background: var(--secondary);
+.form-status-error {
+  color: #9c3d32;
 }
 .site-footer {
+  --footer-font-size: 20px;
   padding-block: 58px 25px;
+  font-family: var(--font-editorial), Georgia, serif;
+  font-size: var(--footer-font-size);
+}
+.site-footer .brand {
+  height: auto;
+  margin-left: 0;
+  overflow: visible;
+}
+.site-footer .brand-logo {
+  width: 44px;
+  height: 44px;
+  overflow: hidden;
+}
+.site-footer .brand-logo img {
+  position: static;
+  height: 100%;
+  object-fit: contain;
+  transform: scale(2.8);
+}
+.site-footer .brand-name,
+.site-footer .brand-subtitle {
+  font-size: var(--footer-font-size);
+  line-height: 1.2;
+}
+.site-footer .brand-subtitle {
+  letter-spacing: 0;
+  text-align: left;
 }
 .footer-main {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: 35px;
   padding-bottom: 44px;
 }
+.footer-main > div {
+  flex: 1 1 320px;
+}
 .footer-main > div > p {
   font-family: var(--font-editorial), serif;
-  font-size: 21px;
+  font-size: var(--footer-font-size);
   color: var(--primary);
   margin-top: 22px;
 }
 .footer-main nav {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  flex: 1 1 540px;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 30px;
+  gap: 8px 30px;
 }
 .footer-main nav .nav-link {
-  font-size: 14px;
+  font-size: var(--footer-font-size);
+  white-space: normal;
+  justify-self: start;
 }
 .footer-bottom {
   display: flex;
+  flex-wrap: wrap;
+  font-weight: 700;
   justify-content: space-between;
   gap: 25px;
   align-items: center;
   border-top: 1px solid var(--border);
   padding-top: 20px;
-  font-size: 11px;
-  color: var(--muted-foreground);
+  font-size: var(--footer-font-size);
+  color: var(--primary);
 }
+
 .footer-bottom .nav-link {
-  font-size: 12px;
+  font-size: var(--footer-font-size);
+  font-weight: 700;
 }
 @media (max-width: 1536px) {
   .hero-title h1 {
@@ -1851,6 +1945,10 @@ a.hero-book {
   .faq-grid,
   .contact-grid {
     gap: 55px;
+  }
+  .locations-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
   }
   .benefits-grid {
     column-gap: 40px;
@@ -2080,13 +2178,19 @@ a.hero-book {
     align-items: flex-start;
     flex-direction: column;
   }
+  .footer-main > div,
   .footer-main nav {
-    gap: 15px;
+    flex: initial;
+  }
+  .footer-main nav {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
   }
   .footer-bottom {
     flex-wrap: wrap;
     gap: 12px 20px;
-    font-size: 11px;
+    font-size: var(--footer-font-size);
   }
   .footer-bottom > span:nth-child(2) {
     order: 3;

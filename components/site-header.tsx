@@ -45,7 +45,8 @@ export function SiteHeader({ copy, locale }: { copy: Copy; locale: Locale }) {
   const mobileNavRef = useRef<HTMLElement>(null);
   const pathname = usePathname();
   const homeHref = `/${locale}`;
-  const languagePath = pathname.endsWith("/acupuncture") ? "/acupuncture" : "";
+  const languagePath =
+    ["/acupuncture", "/privacy"].find((path) => pathname.endsWith(path)) ?? "";
 
   function handleNavLinkClick(event: MouseEvent<HTMLAnchorElement>) {
     event.currentTarget.closest("details")?.removeAttribute("open");

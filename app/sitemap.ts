@@ -9,5 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteUrl}/en` },
     { url: `${siteUrl}/fr/acupuncture` },
     { url: `${siteUrl}/en/acupuncture` },
+    { url: `${siteUrl}/fr/privacy` },
+    { url: `${siteUrl}/en/privacy` },
   ];
 }

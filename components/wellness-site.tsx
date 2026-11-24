@@ -1,13 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import {
-  ArrowDown,
-  ArrowUpRight,
-  Sprout,
-  Heart,
-  Sun,
-} from "lucide-react";
+import { ArrowDown, ArrowUpRight, Sprout, Heart, Sun } from "lucide-react";
 import {
   motion,
   MotionConfig,
@@ -20,6 +14,7 @@ import { useEffect, type ReactNode } from "react";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { ContactSection } from "@/components/contact-section";
+import { LocationsSection } from "@/components/locations-section";
 import {
   Accordion,
   AccordionContent,
@@ -242,7 +237,13 @@ export function WellnessSite({ locale }: { locale: Locale }) {
           <div className="container">
             <Reveal className="section-heading centered">
               <h2>{copy.benefitsTitle}</h2>
-              <p className="body-copy">{copy.benefitsDescription}</p>
+              <p className="body-copy">
+                {copy.benefitsDescriptionBeforeContact}
+                <a className="benefits-contact-link" href="#contact">
+                  {copy.benefitsContact}
+                </a>
+                {copy.benefitsDescriptionAfterContact}
+              </p>
             </Reveal>
             <div className="benefits-grid">
               {copy.benefits.map((benefit, index) => {
@@ -348,20 +349,6 @@ export function WellnessSite({ locale }: { locale: Locale }) {
           </div>
         </section>
 
-        <section className="visual-pause">
-          <Image src="/images/treatment-room.png" alt="" fill sizes="100vw" />
-          <div className="pause-overlay" />
-          <Reveal className="pause-copy">
-            <p className="eyebrow">{copy.pauseTop}</p>
-            <h2>
-              {copy.pauseTitle}
-              <br />
-              <em>{copy.pauseItalic}</em>
-            </h2>
-            <Sprout size={30} strokeWidth={1} aria-hidden="true" />
-          </Reveal>
-        </section>
-
         <section id="faq" className="section-pad faq-section background-cover">
           <div className="container faq-grid">
             <Reveal fromLeft>
@@ -401,6 +388,7 @@ export function WellnessSite({ locale }: { locale: Locale }) {
             </Accordion>
           </div>
         </section>
+        <LocationsSection copy={copy} />
         <ContactSection copy={copy} locale={locale} />
       </main>
       <SiteFooter copy={copy} locale={locale} />

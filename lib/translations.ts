@@ -99,8 +99,10 @@ export const translations = {
       "Lilianne carefully placing acupuncture needles during a back treatment",
     benefitsEyebrow: "SUPPORT FOR YOUR EVERYDAY",
     benefitsTitle: "Common reasons to consult",
-    benefitsDescription:
-      "If your condition isn’t listed here, don’t hesitate to contact me and we can discuss it.",
+    benefitsDescriptionBeforeContact:
+      "If your condition isn’t listed here, don’t hesitate to ",
+    benefitsContact: "contact me",
+    benefitsDescriptionAfterContact: " and we can discuss it.",
     benefits: [
       "Digestive issues",
       "Seasonal allergies & immune system support",
@@ -128,8 +130,59 @@ export const translations = {
     portraitAlt: "Lilianne smiling, seated beside plants in a softly lit room",
     hoursLocationsEyebrow: "LOCATION & AVAILABILITY",
     hoursLocationsTitle: "Hours & locations",
-    hoursInfo: "By appointment · hours to be confirmed",
-    locationInfo: "120 Rue de Grande-Île, Salaberry-de-Valleyfield, QC J6S 3M6",
+    locationAddressLabel: "ADDRESS",
+    locationHoursLabel: "HOURS",
+    locationBookingLabel: "BOOKING",
+    locationMapLink: "View on Google Maps",
+    locationBookingOnlinePrefix: "Book online via ",
+    locationBookingOnlineLink: "Go Rendez-vous",
+    locationBookingOnlineMiddle: " or ",
+    locationBookingContactLink: "contact me directly",
+    locationBookingOnlineSuffix: ".",
+    locationBookingDirectPrefix:
+      "To book an appointment, please contact them directly at ",
+    locationBookingDirectSuffix: ".",
+    practiceLocations: [
+      {
+        name: "Samiya Centre Bien-être",
+        address:
+          "120 Rue de Grande-Île, Salaberry-de-Valleyfield, QC J6S 3M6",
+        mapsUrl:
+          "https://www.google.com/maps?geocode=KReXG1luT8lMMbg6sfYsaR1e&daddr=120+Rue+de+Grande-%C3%8Ele,+Salaberry-de-Valleyfield,+QC+J6S+3M6",
+        hours: [
+          "Wednesday · 10:30 a.m. to 5:00 p.m.",
+          "Friday · 3:30 p.m. to 7:30 p.m.",
+          "Saturday · 11:00 a.m. to 4:00 p.m. (social acupuncture)",
+        ],
+        phone: "",
+        booking: "online",
+      },
+      {
+        name: "Action Sport Physio",
+        address:
+          "1020 Bd Monseigneur-Langlois #210, Salaberry-de-Valleyfield, QC J6S 0M2",
+        mapsUrl:
+          "https://www.google.com/maps?geocode=KYlaofEsUMlMMSk4cqZIo2-A&daddr=1020+Bd+Monseigneur-Langlois+%23210,+Salaberry-de-Valleyfield,+QC+J6S+0M2",
+        hours: [
+          "Monday · 9:30 a.m. to 6:30 p.m.",
+          "Thursday · 12:00 p.m. to 6:00 p.m.",
+          "Friday · 9:00 a.m. to 2:00 p.m.",
+        ],
+        phone: "(450) 373-0111",
+        booking: "direct",
+      },
+      {
+        name: "OVPAC",
+        address: "320 Chem. Larocque, Salaberry-de-Valleyfield, QC J6T 4S2",
+        mapsUrl:
+          "https://www.google.com/maps?geocode=KQfu8I7UUclMMV0_8uVHC2te&daddr=320+Chem.+Larocque,+Salaberry-de-Valleyfield,+QC+J6T+4S2",
+        hours: [
+          "Tuesday · 10:00 a.m. to 1:30 p.m. & 2:30 p.m. to 5:30 p.m. (social acupuncture)",
+        ],
+        phone: "",
+        booking: "online",
+      },
+    ],
     servicesEyebrow: "",
     servicesTitle: "Services & pricing",
     serviceOfferings: [
@@ -230,22 +283,20 @@ export const translations = {
     message: "What brings you here?",
     namePlaceholder: "First and last name",
     emailPlaceholder: "you@example.com",
-    formAction: "Prepare my inquiry",
-    formNote:
-      "Preview: online booking and message delivery are not connected. You can prepare and download an inquiry below. Please do not include sensitive health information.",
-    draftTitle: "Your inquiry is ready",
-    draftDescription:
-      "This is a draft only. It has not been sent and no appointment has been booked. Download it to keep until the practice’s contact details are available.",
-    download: "Download my inquiry",
-    footerLine: "A gentler way to feel like yourself.",
+    formAction: "Send message",
+    formSending: "Sending...",
+    formSuccess: "Your message has been sent. Thank you.",
+    formError:
+      "Your message could not be sent. Please try again or email lilianne.dorais.ac@hotmail.com directly.",
+    footerLine: "Member of the Ordre des acupuncteurs du Québec.",
     homeLabel: "Lilianne Acupuncture — home",
     footerNavLabel: "Footer navigation",
     privacy: "Privacy",
     copyright: "All rights reserved.",
     privacyTitle: "Your privacy matters",
     privacyBody:
-      "This preview form does not send or store your information on a server. Your draft exists only in this page until you download it or leave. Please do not enter sensitive health information. A complete privacy policy and the practice’s contact information must be added before real appointment requests are accepted.",
-    footerNote: "Practice details and booking availability to be confirmed.",
+      "When you submit this form, your name, email address, and message are sent to the practice by email using Resend. Do not include sensitive health information. Contact the practice for details about how your information is handled.",
+    footerNote: "Salaberry-de-Valleyfield",
   },
   fr: {
     metaTitle: "Lilianne Acupuncture — Acupuncture à Valleyfield",
@@ -343,8 +394,10 @@ export const translations = {
       "Lilianne posant délicatement des aiguilles d’acupuncture lors d’un soin du dos",
     benefitsEyebrow: "UN SOUTIEN AU QUOTIDIEN",
     benefitsTitle: "Raisons fréquentes de consulter",
-    benefitsDescription:
-      "Si votre condition ne s’y retrouve pas, n’hésitez pas à me contacter et nous pourrons en discuter.",
+    benefitsDescriptionBeforeContact:
+      "Si votre condition ne s’y retrouve pas, n’hésitez pas à me ",
+    benefitsContact: "contacter",
+    benefitsDescriptionAfterContact: " et nous pourrons en discuter.",
     benefits: [
       "Troubles digestifs",
       "Allergies saisonnières et soutien du système immunitaire",
@@ -372,8 +425,59 @@ export const translations = {
       "Lilianne souriante, assise près de plantes dans une pièce baignée de lumière douce",
     hoursLocationsEyebrow: "LIEUX & DISPONIBILITÉS",
     hoursLocationsTitle: "Horaire & lieux de pratique",
-    hoursInfo: "Sur rendez-vous · horaires à confirmer",
-    locationInfo: "120 Rue de Grande-Île, Salaberry-de-Valleyfield, QC J6S 3M6",
+    locationAddressLabel: "ADRESSE",
+    locationHoursLabel: "HORAIRES",
+    locationBookingLabel: "RENDEZ-VOUS",
+    locationMapLink: "Voir sur Google Maps",
+    locationBookingOnlinePrefix: "Réservez en ligne via ",
+    locationBookingOnlineLink: "Go Rendez-vous",
+    locationBookingOnlineMiddle: " ou ",
+    locationBookingContactLink: "contactez-moi directement",
+    locationBookingOnlineSuffix: ".",
+    locationBookingDirectPrefix:
+      "Pour prendre rendez-vous, veuillez contacter Action Sport directement au ",
+    locationBookingDirectSuffix: ".",
+    practiceLocations: [
+      {
+        name: "Samiya Centre Bien-être",
+        address:
+          "120 Rue de Grande-Île, Salaberry-de-Valleyfield, QC J6S 3M6",
+        mapsUrl:
+          "https://www.google.com/maps?geocode=KReXG1luT8lMMbg6sfYsaR1e&daddr=120+Rue+de+Grande-%C3%8Ele,+Salaberry-de-Valleyfield,+QC+J6S+3M6",
+        hours: [
+          "Mercredi · 10h30 à 17h00",
+          "Vendredi · 15h30 à 19h30",
+          "Samedi · 11h00 à 16h00 (acupuncture sociale)",
+        ],
+        phone: "",
+        booking: "online",
+      },
+      {
+        name: "Action Sport Physio",
+        address:
+          "1020 Bd Monseigneur-Langlois #210, Salaberry-de-Valleyfield, QC J6S 0M2",
+        mapsUrl:
+          "https://www.google.com/maps?geocode=KYlaofEsUMlMMSk4cqZIo2-A&daddr=1020+Bd+Monseigneur-Langlois+%23210,+Salaberry-de-Valleyfield,+QC+J6S+0M2",
+        hours: [
+          "Lundi · 9h30 à 18h30",
+          "Jeudi · 12h00 à 18h00",
+          "Vendredi · 9h00 à 14h00",
+        ],
+        phone: "(450) 373-0111",
+        booking: "direct",
+      },
+      {
+        name: "OVPAC",
+        address: "320 Chem. Larocque, Salaberry-de-Valleyfield, QC J6T 4S2",
+        mapsUrl:
+          "https://www.google.com/maps?geocode=KQfu8I7UUclMMV0_8uVHC2te&daddr=320+Chem.+Larocque,+Salaberry-de-Valleyfield,+QC+J6T+4S2",
+        hours: [
+          "Mardi · 10h00 à 13h30 et 14h30 à 17h30 (acupuncture sociale)",
+        ],
+        phone: "",
+        booking: "online",
+      },
+    ],
     servicesEyebrow: "",
     servicesTitle: "Services et tarifs",
     serviceOfferings: [
@@ -490,22 +594,20 @@ export const translations = {
     message: "Comment pouvons-nous vous aider ?",
     namePlaceholder: "Prénom et nom",
     emailPlaceholder: "vous@exemple.fr",
-    formAction: "Préparer ma demande",
-    formNote:
-      "Aperçu : la réservation et l’envoi ne sont pas connectés. Vous pouvez préparer et télécharger votre demande. Merci de ne pas inclure de données de santé sensibles.",
-    draftTitle: "Votre demande est prête",
-    draftDescription:
-      "Il s’agit uniquement d’un brouillon. Rien n’a été envoyé et aucun rendez-vous n’a été réservé. Téléchargez-le en attendant les coordonnées du cabinet.",
-    download: "Télécharger ma demande",
-    footerLine: "Une façon plus douce de vous retrouver.",
+    formAction: "Envoyer le message",
+    formSending: "Envoi en cours...",
+    formSuccess: "Votre message a été envoyé. Merci.",
+    formError:
+      "Votre message n’a pas pu être envoyé. Réessayez ou écrivez directement à lilianne.dorais.ac@hotmail.com.",
+    footerLine: "Membre de l’Ordre des acupuncteurs du Québec.",
     homeLabel: "Lilianne Acupuncture — accueil",
     footerNavLabel: "Navigation de pied de page",
     privacy: "Confidentialité",
     copyright: "Tous droits réservés.",
     privacyTitle: "Votre vie privée compte",
     privacyBody:
-      "Ce formulaire de démonstration ne transmet ni ne stocke vos informations sur un serveur. Votre brouillon reste uniquement sur cette page jusqu’à son téléchargement ou votre départ. Ne saisissez pas de données de santé sensibles. Une politique de confidentialité complète et les coordonnées du cabinet devront être ajoutées avant toute prise de rendez-vous réelle.",
-    footerNote: "Coordonnées du cabinet et disponibilités à confirmer.",
+      "Lorsque vous soumettez ce formulaire, votre nom, votre adresse courriel et votre message sont envoyés au cabinet par courriel avec Resend. N’incluez pas de renseignements sensibles sur votre santé. Contactez le cabinet pour en savoir plus sur le traitement de vos renseignements.",
+    footerNote: "Salaberry-de-Valleyfield",
   },
 };
 export type Copy = (typeof translations)[Locale];
